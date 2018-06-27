@@ -1,0 +1,146 @@
+<div class="wrapper">
+    <div id="breadcrumb">
+        <ul>
+            {$path_way}          
+        </ul>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="container">
+        <div class="content-reg">
+            <p style="font-weight:bold;color:#059BD8">- ĐĂNG KÝ XE TẬP QUA MẠNG</p>
+            <div id="respond">
+                <div class="resetPassSussce clearfix result-reg-form" style="display:none;height:28px;">
+                 	<h3 style="font-size:14px;"><i class="iconSussces"></i><span id="msg-result"></span></h3>
+                 </div>   
+                 <input type="hidden" id="check_reg_len" name="check_reg_len" value="0" /> 
+                <input type="hidden" id="msg_notice_check"  value="" />                  
+                {$form_begin}
+                    <p>
+                        <div class="label-left"><label for="name" >Họ và tên </label></div>
+                        <input type="text" class="input-right" size="32"  id="name" name="name" />                       
+                    </p>
+                    <p>
+                        <div class="label-left"><label for="cmt">Số CMT</label></div>
+                        <input type="text" size="32" id="cmt" name="cmt" />
+                    </p>
+                    <p>
+                        <label class="label-left">Ngày cấp </label>
+                        <input type="text"  placeholder="dd/mm/YYYY" name="reg_date" />                        
+                    </p>
+                    <p>
+                        <label class="label-left">Nơi cấp </label>
+                        <input type="text"   name="reg_place" />
+                    </p>
+                    <p>
+                        <div class="label-left"><label for="phone">Điện thoại</label></div>
+                        <input type="text"  id="phone" name="phone"/>
+                    </p>                    
+                    <p>
+                        <div class="label-left"><label for="phone">Ngày học</label></div>                        
+                        <input type="text" style="width:130px;" class="date-picker enter-type" name="day" id="day" />
+                    </p>
+                    <p>
+                        <div class="label-left"><label for="phone">Giờ bắt đầu</label></div>
+                        <select name="time_start" id="time_start" class="c-check-calendar">                            
+                            <option value="0">Chọn giờ</option>
+                            {$option_time_start}                            
+                        </select>                        
+                    </p>
+                    <p>
+                        <div class="label-left"><label for="phone">Giờ kết thúc</label></div>
+                        <select name="time_end" id="time_end" class="c-check-calendar">
+                            <option value="0">Chọn giờ</option>                            
+                            {$option_time_start}                            
+                        </select>
+                    </p>                    
+                    <p>
+                        <div class="label-left"><label for="type_car">Loại xe</label></div>
+                        <select name="reg_type_car" id="reg_type_car" style="width:239px;">
+                            <option value="0">Chọn loại xe</option>
+                            {$car_option}
+                        </select>
+                    </p>
+                    <p class="list-all-car" style="display:none;">
+                        
+                    </p>
+                    <p>
+                        <a href="javascript:;" class="button-des reg-len-car">Đăng ký</a> &nbsp;&nbsp; 
+                        <a href="javascript:;" onclick="location.reload();" class="button-denied">Hủy</a>                     
+                    </p>
+                {$form_end}
+                <br />
+                <p class="class-note">
+                    - Đăng ký xe tập trực tiếp tại trung tâm
+                </p>
+                <p class="class-note">
+                    - <a href="{contact_url()}">Đăng ký xe tập qua cán bộ tư vấn</a>
+                </p>
+                <p>
+                    <span><b>*Lưu ý: </b>Học viên làm thủ tục lấy phiếu tập trước thời gian bắt đầu tập ít nhất 1 giờ</span>                
+                </p>
+                <p>
+                    <span style="width:34px;height:20px;background-color:red;display:block;float:left;">&nbsp;</span>&nbsp;&nbsp;&nbsp;<b>Khoảng thời gian xe bận</b>
+                </p>
+                <p>
+                    <span style="width:30px;height:20px;background-color:#fff;display:block;float:left;border:2px solid #555555;">&nbsp;</span> &nbsp;&nbsp; <b>Khoảng thời gian xe rảnh</b>
+                </p>                
+            </div>    
+        </div>
+        <div class="column-reg"> 
+            <div style="width:100%;">                           
+                <div style="margin-top:0px;width:60%;float:left">                
+                    <div>
+                    <label>Ngày học</label>
+                    <input type="text" style="width:70px;" value="{$time_current}" class="date-picker enter-type" name="day_search" id="day_search" />                              
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;<label>Buổi học</label>
+                    <select id="filter-time-type" style="width:80px;">
+                        <option value="1">Sáng</option>
+                        <option value="2">Chiều</option>
+                        <option value="3">Tối</option>
+                    </select>             
+                    </div>
+                    <div style="margin:10px 0;">
+                        <label>Loại xe</label>
+                        <select name="type_car" id="type_car" style="width:320px;">
+                            {$car_option}
+                        </select>
+                    </div>
+                </div>  
+                <div style="width:40%;float:left">
+                    <a href="javascript:;" style="margin-right:10px;float:left" class="view-calendar filter-bt">Xem lịch</a>
+                    <span class="loading-img" style="display:none;"><img src="{site_url()}/webskins/skins/global/images/loading.gif" /></span>
+                </div>
+            </div>
+            <br class="clear" />
+            <div style="width:100%;" class="result-html">
+                <table cellspacing="0" cellpadding="0" width="100%" style="margin-bottom:0px;border-bottom:none important;" summary="Summary Here">
+                    <tr class="th-title">
+                      <td width="85px" align="center"><b>TÊN XE</b></td>
+                      {foreach from=$time_map item=one}
+                        <td style="background-color:;" width="43px">{$one.time_code_show}</td>
+                      {/foreach}
+                    </tr>
+                </table>                                      
+                <div id="boxscroll">                
+                    <table cellspacing="0" cellpadding="0" summary="Summary Here">        
+                            {foreach from=$list_car_status item=arr}   
+                            <tr>                        
+                                <td width="85px">
+                                    <a href="javascript:;" rel="{$array_car_img[$arr.CAR_ID]}"  data-geo="data-geo">{$arr.CAR_ID}</a>                                
+                                </td>                                
+                                {foreach from=$time_map item=one}                            
+                                <td width="43px" {if $arr[{$one.time_code}] >=1}style="background-color:red"{/if} ></td>
+                                {/foreach}                                                                                                                    
+                            </tr>  
+                            {/foreach}
+                  </table>        
+                </div>
+            </div>     
+        </div>
+        <br class="clear">
+    </div>
+</div>
+<input type="hidden" id="base_url" value="{site_url()}" />
+<input type="hidden" id="thue_xe_url" value="{dang_ky_thue_xe()}" />

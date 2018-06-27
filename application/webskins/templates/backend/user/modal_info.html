@@ -1,0 +1,72 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h5>Username: {$data.user_name}</h5>
+</div>
+{$form}
+    <div class="modal-body">
+        <div class="row-fluid">
+            <code style="margin-right: 46px;">Time created: {$data.time_created|date_format:"%d-%m-%Y"}</code>
+            <code>Time last login: {$data.time_last_visited|date_format:"%d-%m-%Y %H:%M:%S"}</code>
+        </div>
+        <div style="margin-bottom: 10px;"></div>
+        <div class="row-fluid">
+            <div class="span6">
+                <div class="control-group">
+                    <div class="input-prepend">
+                        <span class="add-on">Email</span>
+                        <input type="text" id="email_edit" value="{$data.email}" name="email" readonly>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="input-prepend">
+                        <span class="add-on">First name</span>
+                        <input type="text" id="first_name" value="{$data.first_name}" name="first_name" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="input-prepend">
+                        <span class="add-on">Last name</span>
+                        <input type="text" id="last_name" value="{$data.last_name}" name="last_name" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="input-prepend">
+                        <span class="add-on">Role</span>
+                        <select name="role">
+                            {$array_role}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="control-group">
+                    <div class="input-prepend">
+                        <span class="add-on">Phone</span>
+                        <input type="text" id="mobiphone" name="mobiphone" value="{$data.phone}" placeholder="091xxxxxx">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="input-prepend">
+                        <span class="add-on">Address</span>
+                        <input type="text" id="address" name="address" placeholder="address" value="{$data.address}">
+                    </div>
+                </div>                
+                <div class="control-group">
+                    <div class="input-prepend">
+                        <span class="add-on">Status</span>
+                        <select name="status">
+                            {$array_status_user}
+                        </select>
+                    </div>                    
+                </div>                
+            </div>
+        </div>        
+        <input type="hidden" value="{$data.id}" name="u_id"/>
+    </div>
+    <div class="modal-footer">
+        <div class="result-update" style="float: left; width: 330px; margin-bottom: 0px; text-align: left;">
+        </div>
+        <button href="#" class="btn btn-success update-click">Update</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</form>

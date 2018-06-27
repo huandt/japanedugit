@@ -1,0 +1,77 @@
+<literal>
+<script type="text/javascript">
+ $(document).ready( function(){	
+		var buttons = { previous:$('#jslidernews2 .button-previous') ,
+						next:$('#jslidernews2 .button-next') };			 
+		$('#jslidernews2').lofJSidernews( { interval:5000,
+											 	easing:'easeInOutQuad',
+												duration:1200,
+												auto:true,
+												mainWidth:684,
+												mainHeight:450,                                                
+												navigatorHeight		: 90,
+												navigatorWidth		: 310,
+												maxItemDisplay:5,
+												buttons:buttons } );				
+	});
+
+</script>
+</literal>
+<style>	
+	ul.lof-main-wapper li {
+		position:relative;	
+	}
+</style>
+
+<div class="block_breadcrumbs">
+    <ul>
+        {$path_way}          
+    </ul>
+</div>
+
+<div class="wrapper">  
+    <div class="container">    
+    <div id="jslidernews2" class="lof-slidecontent" style="width:980px; height:450px;">
+	   <div class="preload"><div></div></div>            
+            <div  class="button-previous">Previous</div>                   
+    		 <!-- MAIN CONTENT --> 
+              <div class="main-slider-content" style="width:684px; height:450px;">
+                <ul class="sliders-wrap-inner">
+                    {foreach from=$list_img item=arr}
+                    <li>                           
+                          <img src={$arr.img_link} height=450" width="684" />           
+                          <div class="slider-description">                           
+                                <p><h3>{$arr.description}</h3></p>                   
+                           
+                         </div>
+                    </li>   
+                    {/foreach}             
+                  </ul>  	
+            </div>
+ 		   <!-- END MAIN CONTENT --> 
+           <!-- NAVIGATOR -->
+           	<div class="navigator-content">
+                  <div class="navigator-wrapper">
+                        <ul class="navigator-wrap-inner">
+                        {foreach from=$list_img item=arr} 
+                          <li>
+                                <div>
+                                    {imagesize src=$arr.image width=60 height=60 source='img_about' default='default_60_60.png'}                                  
+                                    <span style="font-size:17px;margin-top:12px;display:block;">{$arr.description}</span>
+                                </div>    
+                            </li>
+                        {/foreach}
+                        </ul>
+                  </div>
+   
+             </div> 
+          <!----------------- END OF NAVIGATOR --------------------->
+          <div class="button-next">Next</div>
+ 
+ 		 <!-- BUTTON PLAY-STOP -->
+          <div class="button-control"><span></span></div>
+          <!-- END OF BUTTON PLAY-STOP -->           
+ </div> 
+    
+</div>
+</div>

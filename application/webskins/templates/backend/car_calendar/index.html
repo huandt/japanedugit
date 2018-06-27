@@ -1,0 +1,66 @@
+<h6 class="title" style=" width: 88%; float: left; "><i class="icon-user"></i>Quản lý lịch xe</h6>
+<div class="fix"></div>
+<div class="box-content">
+    <h6 class="title"><i class="icon-search"></i>Search</h6>
+    <div class="search-form">
+        <form class="form-horizontal">
+            <div class="span6">
+                <div class="control-group">
+                    <label class="control-label" for="mobiphone_s">Thời gian tạo từ</label>
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-calendar"></i></span>                        
+                            <input type="text" class="date-picker"  placeholder="Thời gian tạo từ" data-date-format="yyyy-mm-dd" name="time_create_begin" id="time_create_begin">
+                        </div>
+                    </div>
+                </div>                              
+            </div>
+            <div class="span6">
+                <div class="control-group">
+                    <label class="control-label" for="mobiphone_s">Đến</label>
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-calendar"></i></span>                        
+                            <input type="text" placeholder="Đến" class="date-picker" data-date-format="yyyy-mm-dd" name="time_create_end" id="time_create_end" />
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <!--<button type="submit" class="btn btn-success"><i class="icon-search icon-white"></i>Tìm kiếm</button>-->
+                    <a class="btn btn-info create-car-cal"><i class="icon-list icon-white"></i>Tạo lịch</a>                                
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<table class="table table-bordered table-striped tablesorter">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Ngày</th>
+          
+            <th>Thao tác</th>           
+        </tr>
+    </thead>
+    <tbody>
+        {foreach from = $data item = arr key = key}
+        <tr class="css-{$arr.auth_status}">
+            <td>{$count++}</td>               
+            <td>{$arr.SCH_DATE}</td>
+            <td>
+                <span style="display: inline-block;margin-top: 5px;">
+                    <a href="{site_url('admin/car_calendar')}?cmd=del&sch_date={$arr.SCH_DATE}" title="Xóa" onclick="if(!confirm('Bạn có chắc chắn muốn xóa thông tin đăng ký?')) return false;" class="btn lock btn-danger" data-placement="top" rel="tooltip" data-original-title="Xóa"><i class="icon-lock icon-white"></i></a>
+                </span>                
+            </td>
+        </tr>
+        {/foreach}
+    </tbody>
+</table>
+{if $paging}
+<div class="pagination">
+    {$paging}
+</div>
+{/if}
+<div class="fix"></div>

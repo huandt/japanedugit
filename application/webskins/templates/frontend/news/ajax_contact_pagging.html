@@ -1,0 +1,25 @@
+<table style="width: 100%;">
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Họ và tên</th>
+        <th>Địa chỉ</th>
+        <th>Điện thoại</th>
+        <th width="150">Email</th>
+    </tr>
+    </thead>
+    {foreach from=$data item=arr key=k}
+        <tr {if $k %2 == 0}class="light"{else}class="dark"{/if}>
+            <td>{$count++}</td>
+            <td>{$arr.FULL_NAME}</td>
+            <td>{$arr.ADDRESS}</td>
+            <td>{$arr.TELEPHONE}</td>
+            <td>{$arr.EMAIL}</td>
+        </tr>                
+    {/foreach}
+</table>
+{if $pagging}
+    <div class="pagination">
+      {$pagging}      
+    </div>
+{/if}

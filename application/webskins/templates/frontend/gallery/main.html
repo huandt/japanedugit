@@ -1,0 +1,12 @@
+<div id="gallery" class="clear">
+  <h2 class="title">Hình ảnh hoạt động và sự kiện của nhà trường</h2>
+  <ul>
+  {foreach from=$list_img item=image}
+    <li class="{if $image.i % 5 == 0}last{else} {/if}"><a href="{$image.img_zoom}" rel="prettyPhoto[gallery1]"><img src="{$image.img_url}" /></a></li>
+  {/foreach}
+  </ul>
+</div>
+<!-- ####################################################################################################### -->
+<div class="pagination">
+  {$pagging}
+</div>

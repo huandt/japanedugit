@@ -1,0 +1,35 @@
+<div id="latestnews">
+
+    <div class="slider-wrapper theme-default">
+        <div id="slider" class="nivoSlider">
+            <a href="javascript:;"><img src="{site_url()}webskins/images/anh truong 1.JPG" /></a>
+        {foreach from=$list_hot item=news}            
+            <a href="{detail_news($news.id,$news.title)}"><img src="{$news.img_url}" data-thumb="{$news.img_url}" alt="" title="{$news.title}"  /></a>
+        {/foreach}
+        </div>
+
+        <div id="htmlcaption" class="nivo-html-caption">
+            <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+        </div>
+    </div>
+    <h2>Tin tức sự kiện nổi bật</h2>
+    <ul>
+    {foreach from=$list item=news}
+      <li class="clear {if $news.i==6}last{else} {/if}">
+        <div class="imgl"><a href="{$news.link_detail}"><img src="{$news.img_url}" alt="" /></a></div>
+        <div class="latestnews">
+          <p><a href="{$news.link_detail}">{$news.title}</a></p>
+          <p>{$news.description|truncate:150}</p>
+        </div>
+      </li>
+      {/foreach}
+    </ul>
+    <p class="readmore"><a href="{site_url('tin-tuc')}">Xem tất cả</a></p>
+</div>
+{literal}
+<script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });  
+</script>
+{/literal}

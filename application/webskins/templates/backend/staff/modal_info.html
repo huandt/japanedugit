@@ -1,0 +1,51 @@
+{$form}
+    <div class="modal-body">        
+        <div style="margin-bottom: 10px;"></div>
+        <div class="row-fluid">
+            <div class="span5">
+                <div class="control-group">
+                    <label class="control-label">Tên</label>
+                    <div class="controls">
+                        <input type="text" name="name" placeholder="Tên" value="{$array_get['FULL_NAME']}"/>
+                    </div>
+                 </div>
+                <div class="control-group">
+                    <label class="control-label">Email</label>
+                    <div class="controls">
+                        <input type="text" name="email" placeholder="Email" value="{$array_get['EMAIL']}"/>
+                    </div>
+                 </div>
+                 <div class="control-group">
+                    <label class="control-label" for="mobiphone_s">Phone</label>
+                    <div class="controls">
+                        <input type="text" name="phone" placeholder="Phone" value="{$array_get['TELEPHONE']}"/>
+                    </div>
+                 </div>                  
+            </div>
+            <div class="span5">                
+                <div class="control-group">
+                    <label class="control-label" for="fullname">Địa chỉ</label>
+                    <div class="controls">
+                        <input type="text" name="address" placeholder="Địa chỉ" value="{$array_get['ADDRESS']}"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Chức vụ</label>
+                    <div class="controls">
+                        <select name="type" id="type_staff_update">
+                            <option value="0">Chức vụ</option>
+                            {$option_staff}
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <input type="hidden" value="{$array_get['id']}" name="u_id"/>
+    </div>
+    <div class="modal-footer">
+        <div class="result-update" style="float: left; width: 330px; margin-bottom: 0px; text-align: left;">
+        </div>
+        <button href="#" class="btn btn-success update-click">Update</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</form>

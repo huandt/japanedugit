@@ -1,0 +1,139 @@
+<h6 class="title" style=" width: 88%; float: left; "><i class="icon-user"></i>Quản lý thông tin đăng ký thuê xe</h6>
+<div class="fix"></div>
+<div class="box-content">
+    <h6 class="title"><i class="icon-search"></i>Search</h6>
+    <div class="search-form">
+        <form class="form-horizontal">
+            <div class="span6">
+                <div class="control-group">
+                    <label class="control-label" for="fullname">Tên</label>
+                    <div class="controls">
+                        <input type="text" name="name" placeholder="Tên" value="{$array_get['name']}"/>
+                    </div>
+                </div>
+                 <div class="control-group">
+                    <label class="control-label" for="mobiphone_s">Số điện thoại</label>
+                    <div class="controls">
+                        <input type="text" name="phone" placeholder="Số điện thoại" value="{$array_get['phone']}"/>
+                    </div>
+                 </div>
+                 <div class="control-group">
+                    <label class="control-label" for="mobiphone_s">Số CMND</label>
+                    <div class="controls">
+                        <input type="text" name="cmnd" placeholder="Số CMND" value="{$array_get['cmnd']}"/>
+                    </div>
+                 </div>
+                 <div class="control-group">
+                    <label class="control-label" for="fullname">Tên xe</label>
+                    <div class="controls">
+                        <input type="text" name="car_id" placeholder="Tên xe" value="{$array_get.car_id}" />                   
+                    </div>
+                </div>    
+            </div>
+            <div class="span6">
+                <div class="control-group">
+                    <label class="control-label" for="mobiphone_s">Thời gian tạo từ</label>
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-calendar"></i></span>                        
+                            <input type="text" class="date-picker"  placeholder="Thời gian tạo từ" data-date-format="dd-mm-yyyy" name="time_create_begin" value="{$array_get['time_create_begin']}">
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="mobiphone_s">Đến</label>
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-calendar"></i></span>                        
+                        <input type="text" placeholder="Đến" class="date-picker" data-date-format="dd-mm-yyyy" name="time_create_end" value="{$array_get['time_create_end']}" />
+                        </div>
+                    </div>                    
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="mobiphone_s">Ngày thuê từ</label>
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-calendar"></i></span>                        
+                            <input type="text" class="date-picker"  placeholder="Ngày thuê từ" data-date-format="dd-mm-yyyy" name="time_reg_begin" value="{$array_get['time_reg_begin']}">
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="mobiphone_s">Đến</label>
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-calendar"></i></span>                        
+                        <input type="text" placeholder="Đến" class="date-picker" data-date-format="dd-mm-yyyy" name="time_reg_end" value="{$array_get['time_reg_end']}" />
+                        </div>
+                    </div>                    
+                </div>                 
+                
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                <button type="submit" class="btn btn-success"><i class="icon-search icon-white"></i> Search</button>
+                <a href="{site_url('admin/reg_car')}?cmd=export" class="btn btn-info"><i class="icon-list icon-white"></i> Xuất excel</a>                
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<table class="table table-bordered table-striped tablesorter">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên học viên</th>
+            <th>Số CMND</th>
+            <th>Số điện thoại</th>            
+            <th>Ngày đăng ký</th>
+            <th>Ngày thuê</th>
+            <th>Thời gian bắt đầu</th>
+            <th>Thời gian kết thúc</th>
+            <th>Tên xe</th> 
+            <th>Xét duyệt</th>           
+        </tr>
+    </thead>
+    <tbody>
+        {foreach from = $data item = arr key = key}
+        <tr class="css-{$arr.auth_status}">
+            <td>{$count++}</td>
+            <td>
+                {$arr.Cust_name}                                    
+            </td>
+            <td>{$arr.Id_value}</td>           
+            <td>{$arr.telephone}</td>                        
+            <td>{$arr.open_date|date_format:"%d/%m/%Y %H:%M"}</td>
+            <td>{$arr.start_date}</td>
+            <td>{$array_time_map[$arr.time_start]}</td>
+            <td>{$array_time_map[$arr.time_end]}</td>
+            <td>{$arr.CAR_ID}</td>
+            <td>
+                {if $arr.auth_status == 0}
+                <span>
+                    <a class="btn btn-info accept-modal" href="javascript:;" title="Duyệt" role="button" u-id="{$arr.id}" data-placement="top" rel="tooltip" data-original-title="Duyệt"><i class="icon-thumbs-up icon-white"></i></a>                    
+                </span>
+                {else}
+                    <span>
+                        <a class="btn btn-danger un-accept-modal" title="Bỏ duyệt" href="javascript:;" role="button" u-id="{$arr.id}" data-placement="top" rel="tooltip" data-original-title="Bỏ duyệt"><i class="icon-hand-left icon-white"></i></a>                    
+                    </span>
+                {/if}
+                <span style="display: inline-block;margin-top: 5px;">
+                <a href="{site_url('admin/reg_car')}?cmd=del&id={$arr.id}" title="Xóa" onclick="if(!confirm('Bạn có chắc chắn muốn xóa thông tin đăng ký?')) return false;" class="btn lock btn-danger" data-placement="top" rel="tooltip" data-original-title="Xóa"><i class="icon-lock icon-white"></i></a>                </span>
+                {if $arr.record_status == 0}
+                    <a href="javascript:;" rel="{$arr.id}" onclick="if(!confirm('Bạn có chắc chắn muốn cập nhập vào bảng lịch thuê xe ko?')) return false;" class="btn btn-warning btn-large update-reg-car"><i class="icon-ok-circle icon-white"></i> Cập nhật lịch</a>
+                {else if $arr.record_status == 1}
+                    <a href="javascript:;" class="btn btn-success btn-large"><i class="icon-ok-circle icon-white"></i>Cập nhật thành công</a>
+                {else if $arr.record_status == 2}
+                    <a href="javascript:;" class="btn btn-danger btn-large"><i class="icon-ok-circle icon-white"></i>Cập nhật Lỗi</a>                    
+                {/if}
+            </td>
+        </tr>
+        {/foreach}
+    </tbody>
+</table>
+{if $paging}
+<div class="pagination">
+    {$paging}
+</div>
+{/if}
+<div class="fix"></div>

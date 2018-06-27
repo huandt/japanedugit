@@ -1,0 +1,158 @@
+<h6 class="title" style=" width: 88%; float: left; "><i class="icon-user"></i>Thêm mới</h6>
+<div class="fix"></div>
+<div class="box-content">
+    <h6 class="title"><i class="icon-search"></i>Tìm kiếm</h6>
+    <div class="search-form">
+       <form class="form-horizontal">
+            <div class="span6">
+                <div class="control-group">
+                    <label class="control-label">Mã xe</label>
+                    <div class="controls">
+                        <input type="text" name="car_id" placeholder="Mã xe" value="{$array_get['car_id']}"/>
+                    </div>
+                 </div>
+                <div class="control-group">
+                    <label class="control-label">Loại xe</label>                    
+                        <div class="controls">
+                            <select name="car_type">
+                                <option value="0">Loại xe</option>
+                                {$option_car}
+                            </select>
+                        </div>                    
+                 </div>                                   
+            </div>
+            <div class="span6">                
+                <div class="control-group">
+                    <label class="control-label" for="fullname">Biển số</label>
+                    <div class="controls">
+                        <input type="text" name="car_reg_id" placeholder="Biển số" value="{$array_get['car_reg_id']}"/>
+                    </div>
+                </div>
+            </div>
+              
+            <div class="control-group">
+                <div class="controls">
+                <button type="submit" class="btn btn-success"><i class="icon-search icon-white"></i> Tìm kiếm</button>
+                &nbsp;<a href="#add-staff-modal" data-toggle="modal" class="btn btn-info">Thêm mới</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<table class="table table-bordered table-striped tablesorter">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Mã xe</th>
+            <th>Loại xe</th>
+            <th>Miêu tả</th>
+            <th>Biển số</th>            
+            <th>Loại xe</th>
+            <th>Giáo viên phụ trách</th>
+            <th>Thao tác</th>            
+        </tr>
+    </thead>
+    <tbody>
+        {foreach from = $data item = user key = key}
+        <tr>
+            <td>{$count++}</td>
+            <td>{$user.CAR_ID}</td>
+            <td>{$user.CAR_CLASS}</td>
+            <td>{$user.DESCRIPTION}</td>
+            <td>{$user.CAR_REG_ID}</td>
+            <td>{$user.CAR_INFO}</td>  
+            <td>{$user.TEACHER_ID}</td>          
+            <td>
+                <span>
+                    <a class="btn btn-info update-modal" rel="{$user.CAR_ID}" href="#" data-toggle="modal" role="button" data-placement="top" rel="tooltip" data-original-title="Edit"><i class="icon-edit icon-white"></i></a>                    
+                </span>
+                <span style="display: inline-block;margin-top: 5px;">
+                    <a onclick="if(!confirm('Bạn có chắc chắn muốn xóa thông tin này không?')) return false;"" href="{site_url('admin/car')}?cmd=del&id={$user.id}" class="btn lock {if $user.status == 1}btn-success{else}btn-danger{/if}" u-id="{$user.id}" u-stat="{$user.status}" data-placement="top" rel="tooltip" data-original-title="Looked/Unlock"><i class="icon-lock icon-white"></i></a>
+                </span>
+            </td>
+        </tr>
+        {/foreach}
+    </tbody>
+</table>
+{if $paging}
+<div class="pagination">
+    {$paging}
+</div>
+{/if}
+<div class="fix"></div>
+<div style="text-align:right; color: #0088CC">
+    <i class="icon-list-alt"></i> Total: {$total_data|money_format}
+</div>
+<div class="fix"></div>
+
+<!-- Modal Add user -->
+<div id="add-staff-modal" class="modal hide" style="width:800px;margin-left:-400px;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h5>Thêm mới</h5>
+    </div>
+    {$form}
+        <div class="modal-body">
+            <div style="margin-bottom: 10px;"></div>
+            <div class="row-fluid">
+                    
+                <div class="span5">
+                    <div class="control-group">
+                        <label class="control-label">Mã xe</label>
+                        <div class="controls">
+                            <input type="text" name="car_id" placeholder="Mã xe"/>
+                        </div>
+                     </div>
+                    <div class="control-group">
+                        <label class="control-label">Loại xe</label>
+                        <div class="controls">
+                            <select name="car_type">
+                                <option value="0">Chọn loại xe</option>
+                                {$option_car}
+                            </select>
+                        </div>
+                     </div>
+                    <div class="control-group">
+                        <label class="control-label">Miêu tả</label>
+                        <div class="controls">
+                            <input type="text" name="description" placeholder="Miêu tả"/>
+                        </div>
+                     </div>
+                </div>
+                <div class="span5">
+                    <div class="control-group">
+                        <label class="control-label" for="fullname">Thông tin</label>
+                        <div class="controls">
+                            <input type="text" name="car_info" placeholder="Loại xe"/>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="mobiphone_s">Biển số</label>
+                        <div class="controls">
+                            <input type="text" name="car_reg_id" placeholder="Biển số"/>
+                        </div>
+                     </div>
+                     <div class="control-group">
+                        <label class="control-label" for="mobiphone_s">Thứ tự</label>
+                        <div class="controls">
+                            <input type="text" name="ordering" placeholder="Thứ tự"/>
+                        </div>
+                     </div>
+                     
+                    <div class="control-group">
+                        <label class="control-label" for="mobiphone_s">Giáo viên phục trách</label>
+                        <div class="controls">
+                            <input type="text" name="teacher" placeholder="Giáo viên"/>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="result-update" style="float: left; width: 330px; margin-bottom: 0px; text-align: left;">
+            </div>
+            <button href="#" class="btn btn-success add-car">Save</button>    
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </form>
+</div>

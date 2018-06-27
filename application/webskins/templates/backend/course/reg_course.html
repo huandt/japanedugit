@@ -1,0 +1,115 @@
+<h6 class="title" style=" width: 88%; float: left; "><i class="icon-user"></i>Quản lý thông tin đăng ký học</h6>
+<div class="fix"></div>
+<div class="box-content">
+    <h6 class="title"><i class="icon-search"></i>Search</h6>
+    <div class="search-form">
+        <form class="form-horizontal">
+            <div class="span6">
+                <div class="control-group">
+                    <label class="control-label" for="fullname">Tên</label>
+                    <div class="controls">
+                        <input type="text" name="name" placeholder="Tên" value="{$array_get['name']}"/>
+                    </div>
+                </div>
+                 <div class="control-group">
+                    <label class="control-label" for="mobiphone_s">Số điện thoại</label>
+                    <div class="controls">
+                        <input type="text" name="phone" placeholder="Số điện thoại" value="{$array_get['phone']}"/>
+                    </div>
+                 </div>
+                 <div class="control-group">
+                    <label class="control-label" for="mobiphone_s">Số CMND</label>
+                    <div class="controls">
+                        <input type="text" name="cmnd" placeholder="Số CMND" value="{$array_get['cmnd']}"/>
+                    </div>
+                 </div>   
+            </div>
+            <div class="span6">
+                <div class="control-group">
+                    <label class="control-label" for="mobiphone_s">Thời gian tạo từ</label>
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-calendar"></i></span>                        
+                            <input type="text" class="date-picker"  placeholder="Thời gian tạo từ" data-date-format="dd-mm-yyyy" name="time_create_begin" value="{$arr_get['time_create_begin']}">
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="mobiphone_s">Đến</label>
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-calendar"></i></span>                        
+                        <input type="text" placeholder="Đến" class="date-picker" data-date-format="dd-mm-yyyy" name="time_create_end" value="{$arr_get['time_create_end']}" />
+                        </div>
+                    </div>                    
+                </div>                
+                <div class="control-group">
+                    <label class="control-label" for="fullname">Hạng xe</label>
+                    <div class="controls">
+                        <select name="course_type">
+                            <option value="0">
+                                Hạng xe
+                            </option>
+                            {$course_type_option}
+                        </select>                        
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                <button type="submit" class="btn btn-success"><i class="icon-search icon-white"></i> Tìm kiếm</button>&nbsp;
+                <a href="{site_url('admin/reg_course')}?cmd=export" class="btn btn-info"><i class="icon-search icon-white"></i> Xuất excel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<table class="table table-bordered table-striped tablesorter">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên học viên</th>
+            <th>Số CMND</th>
+            <th>Địa chỉ</th>
+            <th>Số điện thoại</th>            
+            <th>Hạng xe</th>
+            <th>Ngày tạo</th>
+            <th>Thao tác</th>            
+        </tr>
+    </thead>
+    <tbody>
+        {foreach from = $data item = user key = key}
+        <tr class="css-{$user.auth_status}">
+            <td>{$count++}</td>
+            <td>
+                {$user.Cust_name}                                    
+            </td>
+            <td>{$user.Id_value}</td>            
+            <td>{$user.address}, {$array_district[$user.district_id]}, {$array_city[$user.city_id]}</td>
+            <td>{$user.telephone}</td>
+            <td>{$hang_xe[$user.Course_type]}</td>            
+            <td>{$user.open_date|date_format:"%d/%m/%Y %H:%M"}</td>
+            <td>
+                {if $user.auth_status == 0}
+                <span>
+                    <a class="btn btn-info accept-modal" href="javascript:;" title="Duyệt" role="button" u-id="{$user.id}" data-placement="top" rel="tooltip" data-original-title="Duyệt"><i class="icon-thumbs-up icon-white"></i></a>                    
+                </span>
+                {else}
+                    <span>
+                        <a class="btn btn-danger un-accept-modal" title="Bỏ duyệt" href="javascript:;" role="button" u-id="{$user.id}" data-placement="top" rel="tooltip" data-original-title="Bỏ duyệt"><i class="icon-hand-left icon-white"></i></a>                    
+                    </span>
+                {/if}
+                <span style="display: inline-block;margin-top: 5px;">
+                    <a onclick="if(!confirm('Bạn có chắc chắn muốn xóa thông tin đăng ký?')) return false;" href="{site_url('admin/reg_course')}?cmd=del&id={$user.id}" title="Xóa" class="btn lock btn-danger" data-placement="top" rel="tooltip" data-original-title="Xóa"><i class="icon-lock icon-white"></i></a>
+                </span>
+            </td>
+        </tr>
+        {/foreach}
+    </tbody>
+</table>
+{if $paging}
+<div class="pagination">
+    {$paging}
+</div>
+{/if}
+<div class="fix"></div>

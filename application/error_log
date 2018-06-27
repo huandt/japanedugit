@@ -1,0 +1,39 @@
+[19-Jun-2013 20:57:15 Asia/Bangkok] PHP Warning:  require_once() [<a href='function.require-once'>function.require-once</a>]: Unable to access ../constant.php in /home/nhthorxm/public_html/h/index.php on line 7
+[19-Jun-2013 20:57:15 Asia/Bangkok] PHP Warning:  require_once(../constant.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/nhthorxm/public_html/h/index.php on line 7
+[19-Jun-2013 20:57:15 Asia/Bangkok] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required '../constant.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nhthorxm/public_html/h/index.php on line 7
+[19-Jun-2013 20:57:25 Asia/Bangkok] PHP Warning:  require_once() [<a href='function.require-once'>function.require-once</a>]: Unable to access ../constant.php in /home/nhthorxm/public_html/h/index.php on line 7
+[19-Jun-2013 20:57:25 Asia/Bangkok] PHP Warning:  require_once(../constant.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/nhthorxm/public_html/h/index.php on line 7
+[19-Jun-2013 20:57:25 Asia/Bangkok] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required '../constant.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nhthorxm/public_html/h/index.php on line 7
+[19-Jun-2013 20:59:20 Asia/Bangkok] PHP Warning:  require_once() [<a href='function.require-once'>function.require-once</a>]: Unable to access ../constant.php in /home/nhthorxm/public_html/h/index.php on line 7
+[19-Jun-2013 20:59:20 Asia/Bangkok] PHP Warning:  require_once(../constant.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/nhthorxm/public_html/h/index.php on line 7
+[19-Jun-2013 20:59:20 Asia/Bangkok] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required '../constant.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nhthorxm/public_html/h/index.php on line 7
+[19-Jun-2013 20:59:51 Asia/Bangkok] PHP Warning:  require_once() [<a href='function.require-once'>function.require-once</a>]: Unable to access ../constant.php in /home/nhthorxm/public_html/h/index.php on line 7
+[19-Jun-2013 20:59:51 Asia/Bangkok] PHP Warning:  require_once(../constant.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/nhthorxm/public_html/h/index.php on line 7
+[19-Jun-2013 20:59:51 Asia/Bangkok] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required '../constant.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nhthorxm/public_html/h/index.php on line 7
+[19-Jun-2013 22:09:35 Asia/Bangkok] PHP Warning:  imagecreatefromjpeg() [<a href='function.imagecreatefromjpeg'>function.imagecreatefromjpeg</a>]: gd-jpeg, libjpeg: recoverable error: Premature end of JPEG file
+ in /home/nhthorxm/public_html/CDT20/system/Image_lib.php on line 1157
+[19-Jun-2013 22:09:35 Asia/Bangkok] PHP Warning:  imagecreatefromjpeg() [<a href='function.imagecreatefromjpeg'>function.imagecreatefromjpeg</a>]: '/home/nhthorxm/public_html/h/storedata/img_about/1370950665.JPG' is not a valid JPEG file in /home/nhthorxm/public_html/CDT20/system/Image_lib.php on line 1157
+[20-Jun-2013 12:33:26 Asia/Bangkok] PHP Fatal error:  Call to a member function adminInfo() on a non-object in /home/nhthorxm/public_html/h/modules/backend/navigation.php on line 8
+[20-Jun-2013 12:33:35 Asia/Bangkok] PHP Fatal error:  Call to a member function adminInfo() on a non-object in /home/nhthorxm/public_html/h/modules/backend/navigation.php on line 8
+[20-Jun-2013 12:37:51 Asia/Bangkok] PHP Fatal error:  Call to a member function adminInfo() on a non-object in /home/nhthorxm/public_html/h/modules/backend/navigation.php on line 8
+[20-Jun-2013 12:38:15 Asia/Bangkok] PHP Fatal error:  Call to a member function adminInfo() on a non-object in /home/nhthorxm/public_html/h/modules/backend/navigation.php on line 8
+[20-Jun-2013 12:38:17 Asia/Bangkok] PHP Fatal error:  Call to a member function adminInfo() on a non-object in /home/nhthorxm/public_html/h/modules/backend/navigation.php on line 8
+[20-Jun-2013 12:38:34 Asia/Bangkok] PHP Fatal error:  Call to a member function adminInfo() on a non-object in /home/nhthorxm/public_html/h/modules/backend/navigation.php on line 8
+[20-Jun-2013 12:39:24 Asia/Bangkok] PHP Fatal error:  Call to a member function adminInfo() on a non-object in /home/nhthorxm/public_html/h/modules/backend/navigation.php on line 8
+[22-Feb-2014 11:38:37 Asia/Bangkok] PHP Fatal error:  Call to undefined method ebook_mod::_cache_menu() in /home/nhthorxm/public_html/nbkbg.edu.vn/modules/backend/ebook_mod.php on line 148
+[22-Feb-2014 11:39:05 Asia/Bangkok] PHP Fatal error:  Call to undefined method ebook_mod::_cache_menu() in /home/nhthorxm/public_html/nbkbg.edu.vn/modules/backend/ebook_mod.php on line 148
+[05-Mar-2014 09:41:36 Asia/Bangkok] PHP Fatal error:  Call to undefined method ebook_mod::_cache_menu() in /home/nhthorxm/public_html/nbkbg.edu.vn/modules/backend/ebook_mod.php on line 148
+[13-Mar-2014 13:39:01 Asia/Bangkok] PHP Fatal error:  Call to undefined method ebook_mod::_cache_menu() in /home/nhthorxm/public_html/nbkbg.edu.vn/modules/backend/ebook_mod.php on line 148
+[18-Apr-2014 15:38:52 Asia/Bangkok] PHP Fatal error:  Call to undefined method ebook_mod::_cache_menu() in /home/nhthorxm/public_html/nbkbg.edu.vn/modules/backend/ebook_mod.php on line 148
+[18-Apr-2014 15:39:11 Asia/Bangkok] PHP Fatal error:  Call to undefined method ebook_mod::_cache_menu() in /home/nhthorxm/public_html/nbkbg.edu.vn/modules/backend/ebook_mod.php on line 148
+[18-Apr-2014 15:39:23 Asia/Bangkok] PHP Fatal error:  Call to undefined method ebook_mod::_cache_menu() in /home/nhthorxm/public_html/nbkbg.edu.vn/modules/backend/ebook_mod.php on line 148
+[18-Apr-2014 15:39:56 Asia/Bangkok] PHP Fatal error:  Call to undefined method ebook_mod::_cache_menu() in /home/nhthorxm/public_html/nbkbg.edu.vn/modules/backend/ebook_mod.php on line 148
+[18-Apr-2014 15:39:59 Asia/Bangkok] PHP Fatal error:  Call to undefined method ebook_mod::_cache_menu() in /home/nhthorxm/public_html/nbkbg.edu.vn/modules/backend/ebook_mod.php on line 148
+[18-Apr-2014 15:40:03 Asia/Bangkok] PHP Fatal error:  Call to undefined method ebook_mod::_cache_menu() in /home/nhthorxm/public_html/nbkbg.edu.vn/modules/backend/ebook_mod.php on line 148
+[18-Apr-2014 15:40:24 Asia/Bangkok] PHP Fatal error:  Call to undefined method ebook_mod::_cache_menu() in /home/nhthorxm/public_html/nbkbg.edu.vn/modules/backend/ebook_mod.php on line 148
+[18-Apr-2014 15:40:30 Asia/Bangkok] PHP Fatal error:  Call to undefined method ebook_mod::_cache_menu() in /home/nhthorxm/public_html/nbkbg.edu.vn/modules/backend/ebook_mod.php on line 148
+[18-Apr-2014 15:41:07 Asia/Bangkok] PHP Fatal error:  Call to undefined method ebook_mod::_cache_menu() in /home/nhthorxm/public_html/nbkbg.edu.vn/modules/backend/ebook_mod.php on line 148
+[18-Apr-2014 15:41:28 Asia/Bangkok] PHP Fatal error:  Call to undefined method ebook_mod::_cache_menu() in /home/nhthorxm/public_html/nbkbg.edu.vn/modules/backend/ebook_mod.php on line 148
+[18-Apr-2014 15:45:05 Asia/Bangkok] PHP Fatal error:  Call to undefined method ebook_mod::_cache_menu() in /home/nhthorxm/public_html/nbkbg.edu.vn/modules/backend/ebook_mod.php on line 148
+[18-Apr-2014 15:50:39 Asia/Bangkok] PHP Fatal error:  Call to undefined method ebook_mod::_cache_menu() in /home/nhthorxm/public_html/nbkbg.edu.vn/modules/backend/ebook_mod.php on line 148
+[13-May-2014 15:58:17 Asia/Bangkok] PHP Fatal error:  Call to undefined method ebook_mod::_cache_menu() in /home/nhthorxm/public_html/nbkbg.edu.vn/modules/backend/ebook_mod.php on line 148

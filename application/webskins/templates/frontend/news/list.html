@@ -1,0 +1,11 @@
+{foreach from=$list_news item=news}
+    <div class="section" id="{if $count == $news.i}last_section{else} {/if}">
+        <a href="{detail_news($news.id,$news.title)}"><img src="{$news.img_url}" class="imgl"></a>
+        <p class="title-news"><a href="{detail_news($news.id,$news.title)}">{$news.title}</a></p>
+        <p>{$news.description|truncate:120}</p>
+        <p>{$news.time_create|date_format:"%d/%m/%y %H:%M:%S"}</p>
+    </div>
+{/foreach}
+<div class="pagination">
+{$pagging}
+</div>

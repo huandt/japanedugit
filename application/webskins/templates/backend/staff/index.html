@@ -1,0 +1,155 @@
+<h6 class="title" style=" width: 88%; float: left; "><i class="icon-user"></i>Thêm mới</h6>
+<div class="fix"></div>
+<div class="box-content">
+    <h6 class="title"><i class="icon-search"></i>Tìm kiếm</h6>
+    <div class="search-form">
+       <form class="form-horizontal">
+            <div class="span6">
+                <div class="control-group">
+                    <label class="control-label">Tên</label>
+                    <div class="controls">
+                        <input type="text" name="name" placeholder="Tên" value="{$array_get['name']}"/>
+                    </div>
+                 </div>
+                <div class="control-group">
+                    <label class="control-label">Email</label>
+                    <div class="controls">
+                        <input type="text" name="email" placeholder="Email" value="{$array_get['email']}"/>
+                    </div>
+                 </div>
+                 <div class="control-group">
+                    <label class="control-label" for="mobiphone_s">Phone</label>
+                    <div class="controls">
+                        <input type="text" name="phone" placeholder="Phone" value="{$array_get['phone']}"/>
+                    </div>
+                 </div>                  
+            </div>
+            <div class="span6">                
+                <div class="control-group">
+                    <label class="control-label" for="fullname">Địa chỉ</label>
+                    <div class="controls">
+                        <input type="text" name="address" placeholder="Địa chỉ" value="{$array_get['address']}"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Chức vụ</label>
+                    <div class="controls">
+                        <select name="type" >
+                            <option value="0">Chức vụ</option>
+                            {$option_staff}
+                        </select>
+                    </div>
+                </div>
+            </div>
+              
+            <div class="control-group">
+                <div class="controls">
+                <button type="submit" class="btn btn-success"><i class="icon-search icon-white"></i> Tìm kiếm</button>
+                &nbsp;<a href="#add-staff-modal" data-toggle="modal" class="btn btn-info">Thêm mới</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<table class="table table-bordered table-striped tablesorter">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Tên</th>
+            <th>Số điện thoại</th>
+            <th>Địa chỉ</th>
+            <th>Email</th>            
+            <th>Chức vụ</th>
+            <th>Thao tác</th>            
+        </tr>
+    </thead>
+    <tbody>
+        {foreach from = $data item = user key = key}
+        <tr>
+            <td>{$count++}</td>
+            <td>{$user.FULL_NAME}</td>
+            <td>{$user.TELEPHONE}</td>
+            <td>{$user.ADDRESS}</td>
+            <td>{$user.EMAIL}</td>
+            <td>{$user.DESCRIPTION}</td>            
+            <td>
+                <span>
+                    <a class="btn btn-info update-modal" rel="{$user.id}" href="" data-toggle="modal" role="button" data-placement="top" rel="tooltip" data-original-title="Edit"><i class="icon-edit icon-white"></i></a>                    
+                </span>
+                <span style="display: inline-block;margin-top: 5px;">
+                    <a onclick="if(!confirm('Bạn có chắc chắn muốn xóa thông tin này không?')) return false;" href="{site_url('admin/staff')}?cmd=del&id={$user.id}" class="btn lock {if $user.status == 1}btn-success{else}btn-danger{/if}" u-id="{$user.id}" u-stat="{$user.status}" data-placement="top" rel="tooltip" data-original-title="Xóa"><i class="icon-lock icon-white"></i></a>
+                </span>
+            </td>
+        </tr>
+        {/foreach}
+    </tbody>
+</table>
+{if $paging}
+<div class="pagination">
+    {$paging}
+</div>
+{/if}
+<div class="fix"></div>
+<div style="text-align:right; color: #0088CC">
+    <i class="icon-list-alt"></i> Total: {$total_data|money_format}
+</div>
+<div class="fix"></div>
+
+<!-- Modal Add user -->
+<div id="add-staff-modal" class="modal hide" style="width:800px;margin-left:-400px;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h5>Thêm mới</h5>
+    </div>
+    {$form}
+        <div class="modal-body">
+            <div style="margin-bottom: 10px;"></div>
+            <div class="row-fluid">
+                    
+                <div class="span5">
+                    <div class="control-group">
+                        <label class="control-label">Tên</label>
+                        <div class="controls">
+                            <input type="text" name="name" placeholder="Tên"/>
+                        </div>
+                     </div>
+                    <div class="control-group">
+                        <label class="control-label">Email</label>
+                        <div class="controls">
+                            <input type="text" name="email" placeholder="Email"/>
+                        </div>
+                     </div>
+                     <div class="control-group">
+                        <label class="control-label" for="mobiphone_s">Phone</label>
+                        <div class="controls">
+                            <input type="text" name="phone" placeholder="Phone"/>
+                        </div>
+                     </div>                  
+                </div>
+                <div class="span5">                
+                    <div class="control-group">
+                        <label class="control-label" for="fullname">Địa chỉ</label>
+                        <div class="controls">
+                            <input type="text" name="address" placeholder="Địa chỉ"/>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Chức vụ</label>
+                        <div class="controls">
+                            <select name="type" id="type_staff" >
+                                <option value="0">Chức vụ</option>
+                                {$option_staff}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="result-update" style="float: left; width: 330px; margin-bottom: 0px; text-align: left;">
+            </div>
+            <button href="#" class="btn btn-success add-staff">Save</button>    
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </form>
+</div>

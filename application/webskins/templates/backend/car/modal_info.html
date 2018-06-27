@@ -1,0 +1,64 @@
+{$form_begins}
+    <div class="modal-body">        
+        <div style="margin-bottom: 10px;"></div>
+        <div class="row-fluid">
+            <div class="span5">
+                <div class="control-group">
+                    <label class="control-label">Mã xe</label>
+                    <div class="controls">
+                        <input type="text" name="car_id" placeholder="Mã xe" value="{$info['CAR_ID']}" />
+                    </div>
+                 </div>
+                <div class="control-group">
+                    <label class="control-label">Loại xe</label>
+                    <div class="controls">
+                        <select name="car_type" id="car_type_e">
+                            <option value="0">Chọn loại xe</option>
+                            {$option_car}
+                        </select>
+                    </div>
+                 </div>
+                <div class="control-group">
+                    <label class="control-label">Miêu tả</label>
+                    <div class="controls">
+                        <input type="text" name="description" value="{$info['DESCRIPTION']}" placeholder="Miêu tả"/>
+                    </div>
+                 </div>
+            </div>
+            <div class="span5">
+                <div class="control-group">
+                    <label class="control-label" for="fullname">Thông tin</label>
+                    <div class="controls">
+                        <input type="text" name="car_info" value="{$info['CAR_INFO']}" placeholder="Thông tin"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="mobiphone_s">Biển số</label>
+                    <div class="controls">
+                        <input type="text" name="car_reg_id" value="{$info['CAR_REG_ID']}" placeholder="Biển số"/>
+                    </div>
+                 </div>
+                 
+                 <div class="control-group">
+                    <label class="control-label" for="mobiphone_s">Thứ tự</label>
+                    <div class="controls">
+                        <input type="text" name="ordering" value="{$info['ORDERS']}" placeholder="Thứ tự"/>
+                    </div>
+                 </div>
+                 
+                 <div class="control-group">
+                    <label class="control-label" for="mobiphone_s">Giáo viên</label>
+                    <div class="controls">
+                        <input type="text" name="teacher" placeholder="Giáo viên"/>
+                    </div>
+                 </div>
+            </div>
+        </div>        
+    </div>
+    <div class="modal-footer">
+        <div class="result-update" style="float: left; width: 330px; margin-bottom: 0px; text-align: left;">
+        </div>
+        <button href="#" class="btn btn-success update-click">Update</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</form>

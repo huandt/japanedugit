@@ -1,0 +1,16 @@
+<div id="comments">
+  <h2>Tài liệu và bài giảng</h2>
+  <ul class="commentlist">
+  {foreach from=$list item=file}
+    <li class="{if $file.i % 2 == 0}comment_even{else}comment_odd{/if}">
+      <div class="author"><span class="name"><a href="javascript:;">{$file.name}</a></span></div>
+      <div class="submitdate"><a href="javascript:;">{$file.time_upload|date_format:"%d/%m/%y %H:%M:%S"}</a></div>
+      <p>{$file.description|truncate:150}</p>
+      <div class="submitdate" style="font-size:14px;"><a href="{$file.source}">Tải về</a></div>
+    </li>
+   {/foreach}
+  </ul>
+</div>
+<div class="pagination">
+{$pagging}
+</div>

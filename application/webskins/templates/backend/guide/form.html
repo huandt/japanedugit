@@ -1,0 +1,39 @@
+<h6 class="title" style=" width: 78%; float: left; ">
+    <i class="icon-edit"></i> {if $id}Sửa hướng dẫn{else}Thêm hướng dẫn mới{/if}
+</h6>
+
+<a href="admin/guide" class="btn btn-success" style="float: right; margin-top: 12px; margin-left: 19px;"><i class="icon-th-list icon-white"></i> Danh sách</a>
+<div class="row-fluid">
+	<div class="span12">
+		{if $notice}
+		<div class="alert alert-success"><button data-dismiss="alert" class="close" type="button">×</button>{$notice}</div>
+		{/if}
+		{$form_edit}
+
+			<input type="hidden" value="{$id}" name="id"/>
+
+			<label>Tiêu đề</label>
+		    <input type="text" id="title" value="{$data.title}" name="title" class="span6">
+
+		    <label>Đường dẫn thân thiện</label>
+		    <input type="text" id="slug" value="{$data.slug}" name="slug" class="span6">
+
+		    <label>Chuyên mục</label>
+            <select name="guide_category_id" id="guide_category_id">
+                {foreach from = $category_list item = item key = key}
+                <option value="{$key}"{if $key == $data.guide_category_id}selected="selected"{/if}>{$item}</option>
+                {/foreach}
+            </select>
+
+            <label>Nội dung</label>
+		    <textarea id="content" name="content" class="span9 editor">{$data.content}</textarea>
+		    <label class="checkbox">
+		      	<input type="checkbox" name="status" value="1"{if $data.status == 1} checked="checked"{/if} /> Hoạt động
+		    </label>
+		    <div class="control-group" style="text-align: center">
+    			<button class="btn btn-success guide-cat-add"><i class="icon-ok icon-white"></i> Lưu</button>
+		    </div>
+		</form>
+	</div>
+</div>
+<div class="fix"></div>

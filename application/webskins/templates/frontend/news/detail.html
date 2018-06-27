@@ -1,0 +1,21 @@
+{foreach from=$info_news item=detail}
+    <h2>{$detail.title}</h2>
+    <div class="col col_13">
+        <a href="javascript:;"><img width="200" height="150" src="{$detail.img_url}" alt=""></a>
+    </div>
+    <div><b>Mô tả : <br/></b>{$detail.description|truncate:200}</div>
+    <div class="cleaner h30"></div>
+    {$detail.content}
+    <div class="cleaner h50"></div>
+{/foreach}
+<h5><strong>Các tin tức khác</strong></h5>
+<ul class="other_news">
+    {foreach from=$other_news item=news}
+	<li><a href="{detail_news($news.id,$news.title)}">{$news.title}</a> ({$news.time_create|date_format:"%d/%m/%y %H:%M:%S"})</li>
+    {/foreach}
+</ul>
+{literal}
+<style type="text/css">
+    #content img{width: 100% !important;height: auto !important; }    
+</style>
+{/literal}

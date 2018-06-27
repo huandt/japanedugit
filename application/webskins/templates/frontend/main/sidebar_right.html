@@ -1,0 +1,33 @@
+<div id="right_column">
+  <div class="holder">
+    <span class="title-box">Video giới thiệu</span>
+    <iframe width="230" height="236" src="//www.youtube.com/embed/-zVbdsktT2s" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="holder">
+    <span class="title-box">Bản tin hot</span>
+    <iframe width="230" height="236" src="//www.youtube.com/embed/08_wvyyp8tY" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="holder">
+    <span class="title-box">Hình ảnh hoạt động</span>
+    {foreach from=$list_img item=imge}
+    	<div class="apply">
+      {foreach from=$imge item=arr key=key}
+      <a {if $key%2 ==0}class="a-activity-old"{/if} href="{site_url('hinh-anh-hoat-dong')}" ><img src="{$arr.img_url}"/> </a>
+      {/foreach}
+      </div>
+    {/foreach}
+  </div>
+  <div class="holder count-access">
+    <span class="title-box">Thống kê truy cập</span>
+    <div class="apply">   
+    <p>Thành viên online: {literal}
+    <script id="_wauyc3">var _wau = _wau || [];
+_wau.push(["colored", "w9qmwrqh30fw", "yc3", "ffc20e000000"]);
+(function() {var s=document.createElement("script"); s.async=true;
+s.src="http://widgets.amung.us/colored.js";
+document.getElementsByTagName("head")[0].appendChild(s);
+})();</script>{/literal}</p>    
+    </div>
+  </div>
+</div>
+<!--<strong>{$imge.description|truncate:20}</strong>-->

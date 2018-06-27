@@ -1,0 +1,21 @@
+<div id="left_column">
+{foreach from=$parent item=arr} 
+	<div class="subnav">
+	<span class="title-box">{$arr.name}</span>
+		{if $list_category[$arr.id]}
+		<ul class="ul-list-box">
+		{foreach from=$list_category[$arr.id] item=one}
+			<li><a href="{$one.link_detail}">{$one.name}</a></li>
+		{/foreach}
+		</ul>
+		{/if}
+	</div>
+{/foreach}
+<!--
+{foreach from=$list_category item=cate}
+  <span class="title-box">{$cate.name}</span>
+  <div class="imgholder"><a href="{$cate.link_detail}"><img src="{$cate.img_url}" alt="" /></a></div>
+
+{/foreach}
+-->
+</div>

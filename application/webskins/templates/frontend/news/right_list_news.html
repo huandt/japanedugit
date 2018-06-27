@@ -1,0 +1,26 @@
+<div class="block_popular_posts">
+    <h4>Thông tin tuyển sinh</h4> 
+    {foreach from=$list_news item=new}   
+        <div class="article">
+        	<div class="pic">
+        		<a href="#" class="w_hover">
+        			{imagesize src=$new.image width=100 height=100 source='news' default='default_300_300.png'}
+        			<span></span>
+        		</a>
+        	</div>                
+        	<div class="text">
+        		<p class="title"><a href="{detail_new($new.id,$new.title)}">{$new.title}</a></p>        	
+        	</div>
+        </div>
+        <div class="line_3"></div>
+    {/foreach}    
+</div>
+
+<div class="block_popular_stuff">    
+    <div class="content">
+    	<a href="http://h.thoitrangthuhan.com.vn/tin-tuc/30/Khoa-hoc-du-hoc-Nhat-Ban.html" tabindex="_blank"><img src="{$store_data}/ad/qc_1.jpg" /></a>
+    </div>    
+    <div class="clearboth"></div>
+    
+    <div class="line_2"></div>
+</div>

@@ -1,0 +1,19 @@
+<div id="column">
+    <div class="subnav">
+      <h2>Danh mục </h2>
+      <ul>
+      {foreach from=$list_category item=cate}
+        <li><a href="{$cate.link_detail}">{$cate.name}</a></li>
+        {/foreach}
+      </ul>
+    </div>
+    <div id="featured">
+      <ul>
+        <li>
+          <h2>Ảnh hoạt động</h2>
+          <p class="imgholder"><img alt="" src="{$skin_front}/images/active.png"></p>
+          <p class="readmore"><a href="{site_url('hinh-anh-hoat-dong')}">Xem tất cả »</a></p>
+        </li>
+      </ul>
+    </div>
+</div>

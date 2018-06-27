@@ -1,0 +1,59 @@
+<div class="wrapper">
+  <div id="header" class="clear">
+    <div class="fl_left">
+      <img src="{site_url()}webskins/skins/school/images/logo_left.png">      
+    </div>
+    <div class="logo-right">    
+    <img src="{site_url()}webskins/skins/school/images/logo_right.png">      
+   
+    </div>
+    <div class="fl_right">
+        <ul>
+            <li><a href="{base_url()}">Trang chủ</a></li>
+            <li><a href="{contact_url()}">Liên hệ</a></li>
+            <li class="last"><a href="{about_url()}">Giới thiệu</a></li>
+            <!--li><a href="#">Student Login</a></li>
+            <li class="last"><a href="#">Staff Login</a></li-->
+        </ul>
+      <form action="#" method="post" id="sitesearch">
+        <fieldset>
+          <!--<strong>Tìm kiếm:</strong>-->
+          <input type="text" value="Tìm kiếm trong website&hellip;" onfocus="this.value=(this.value=='Tìm kiếm trong website&hellip;')? '' : this.value ;" />
+          <a href="javascript:;" class="search"><img src="{$skin_front}/images/search.png" id="search" alt="Search" /></a>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper row2">
+<div id="menu">
+
+<ul>
+
+    <li ><a class="{if $local== 'home'}active{else} {/if}"  href="{site_url()}">Trang chủ</a></li>
+    <li ><a class="{if $local== 'news'}active{else} {/if}"  href="{site_url('tin-tuc')}">Tin tức</a></li>
+    <li  ><a class="{if $local== 'gallery'}active{else} {/if}" href="{site_url('hinh-anh-hoat-dong')}">Hình ảnh</a></li>
+    <li ><a class="{if $local== 'ebook'}active{else} {/if}" href="{site_url('tai-lieu')}">Tài liệu</a></li>
+    <li ><a class="{if $local== 'about'}active{else} {/if}" href="{about_url()}">Giới thiệu</a></li>
+    <li ><a class="{if $local== 'contact'}active{else} {/if}" href="{contact_url()}">Liên hệ</a></li>
+</ul>
+
+
+</div>
+  <div class="rnd parent-topnav">
+    
+    <!-- ###### -->
+    <div id="topnav" style="display:none;">
+      <ul>
+        <li class="{if $local== 'home'}active{else} {/if}"><a  href="{site_url()}">Trang chủ</a></li>
+        <li class="{if $local== 'news'}active{else} {/if}"><a  href="{site_url('tin-tuc')}">Tin tức</a></li>
+        <li  class="{if $local== 'gallery'}active{else} {/if}"><a href="{site_url('hinh-anh-hoat-dong')}">Hình ảnh</a></li>
+        <li class="{if $local== 'ebook'}active{else} {/if}"><a href="{site_url('tai-lieu')}">Tài liệu</a></li>
+        <li class="{if $local== 'about'}active{else} {/if}"><a href="{about_url()}">Giới thiệu</a></li>
+        <li class="{if $local== 'contact'}active{else} {/if}"><a href="{contact_url()}">Liên hệ</a></li>
+      </ul>
+    </div>
+    <!-- ###### -->
+  </div>
+</div>
