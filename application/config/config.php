@@ -26,7 +26,7 @@
 | variable so that it is blank.
 |
 */
-$config['base_url']    = 'http://localhost:81/school/application/';
+$config['base_url']    = APP_URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -193,7 +193,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-//$config['encryption_key'] = 'klmnxeuaof';
+$config['encryption_key'] = 'huan12daika';
 $config['session_user'] = 'misite_session';
 
 /*
@@ -223,6 +223,8 @@ $config['sess_table_name']        = 'ontop_session';
 $config['sess_match_ip']        = FALSE;
 $config['sess_match_useragent']    = TRUE;
 $config['sess_time_to_update']    = 300;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -263,7 +265,7 @@ $config['global_xss_filtering'] = TRUE;
 | 'csrf_cookie_name' = The cookie name
 | 'csrf_expire' = The number in seconds the token should expire.
 */
-$config['csrf_protection'] = TRUE;
+$config['csrf_protection'] = FALSE;
 //$config['csrf_protection'] = FALSE;
 $config['csrf_token_name'] = 'csrf_onetop';
 $config['csrf_cookie_name'] = 'csrf_onetop';
@@ -328,7 +330,7 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 $config['server_image']= array(
-                        'http://localhost:81/school/application/storedata/'
+                        APP_URL.'storedata/'
                     );
 //Token dùng để tạo link đến mail người dùng nhằm xác thực thông tin.
 $config['mail_token'] = 'onetop_mail_token';
@@ -336,13 +338,14 @@ $config['mail_token'] = 'onetop_mail_token';
 $config['status_user']  = array(
     0   => 'Inactive',
     1   => 'Active',
-    2   => 'Block'
+    2   => 'Block' 
 );
 $config['role'] = array(
     1   => 'ADMIN',
-    2   => 'CUSTOMER'
+    2   => 'CUSTOMER'    
 );
-$config['hang_xe']  = array(
-    1 => 'Hạng B2',
-    2 => 'Hạng C'
+$config['vides_type'] = array(
+    1=> "Top by country",
+  //  2=> "Top music"
+    3=> 'Top by Category'
 );
