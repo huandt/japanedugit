@@ -13,8 +13,8 @@
 | Path to the script directory.  Relative to the CI front controller.
 |
 */
-$config['base_uri'] = 'http://localhost:81/school/application/';
-$config['static_domain'] = 'http://localhost:81/school/application/';
+$config['base_uri'] = APP_URL;
+$config['static_domain'] = APP_URL;
 
 $config['script_dir'] = 'webskins/js/';
 
@@ -35,7 +35,7 @@ $config['style_dir'] = 'webskins/skins/';
 | Cache Directory
 |--------------------------------------------------------------------------
 |
-| Path to the cache directory. Must be writable. Relative to the CI
+| Path to the cache directory. Must be writable. Relative to the CI 
 | front controller.
 |
 */
@@ -57,7 +57,7 @@ $config['cache_dir'] = 'cache/js_css/';
 | Base URI
 |--------------------------------------------------------------------------
 |
-|  Base uri of the site, like http://www.example.com/ Defaults to the CI
+|  Base uri of the site, like http://www.example.com/ Defaults to the CI 
 |  config value for base_url.
 |
 */

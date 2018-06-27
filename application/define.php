@@ -1,12 +1,25 @@
 <?php
-define('DS','/');
+//define('DS','/');
 define('APP_PATH',dirname(__FILE__).'/');
-define('SITE_TITLE','Trường TH, THCS, THPT Nguyễn Bỉnh Khiêm');
+define('SITE_TITLE','Sub4Sub');
 
-define ('APP_URL','http://localhost:81/school/application/');
-define ('APP_URL_EDITOR','http://localhost:81/school/application/storedata/');
-define ('STATIC_URL','http://localhost/school/application/storedata/');
-define ('MEDIA_URL','http://localhost:81/school/application/');
+
+if (isset($_SERVER['HTTP_HOST'])) {
+	$base_url = isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on' ? 'https' : 'http';
+	$base_url .= '://'. $_SERVER['HTTP_HOST'];
+	$base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+	
+} else {
+	$base_url = 'http://localhost/pxcl/application/';
+}
+
+
+define ('APP_URL',$base_url);
+define ('APP_URL_EDITOR',$base_url.'/storedata/');
+define ('STATIC_URL',$base_url.'/storedata/');
+define ('MEDIA_URL',$base_url);
+define('STORE_DATA',ROOT_PATH.DS.'application/storedata'.DS);
+
 
 define('CACHE_PATH',APP_PATH.'cache'.DS);
 define('APP_MODEL_PATH',APP_PATH.'models/');
@@ -18,8 +31,8 @@ define('TEMPLATE_PATH',APP_PATH.'webskins'.DS.'templates'.DS);
 define('LAYOUT_PATH',TEMPLATE_PATH.'layout'.DS);
 define('TEMPLATE_PATH_COMPILE',APP_PATH.'webskins'.DS.'templates_c'.DS);
 define('SKIN_ADMIN',APP_URL.'webskins/skins/backend');
-define('SKIN_ONETOP',APP_URL.'webskins/skins/frontend');
-define('SKIN_SCHOOL',APP_URL.'webskins/skins/school');
+define('SKIN_FRONTEND',APP_URL.'webskins/skins/frontend');
+
 
 define('CACHE_MODULE_PATH',APP_PATH.'cache'.DS.'modules'.DS);
 define('CACHE_CATEGORY',APP_PATH.'cache'.DS.'categories'.DS);

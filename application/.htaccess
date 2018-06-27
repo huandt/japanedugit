@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /school/application/
+RewriteBase /jpedu/application/
 RewriteCond $1 !^(index\.php|ajax|crawl|resources|robots\.txt)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
