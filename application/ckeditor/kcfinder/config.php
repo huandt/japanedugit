@@ -1,7 +1,7 @@
 <?php
 session_start();
-error_reporting(0); // Set E_ALL for debuging
-
+error_reporting('E_ALL'); // Set E_ALL for debuging
+//require_once('define.php');
 /** This file is part of KCFinder project
   *
   *      @desc Base configuration file
@@ -13,12 +13,13 @@ error_reporting(0); // Set E_ALL for debuging
   *   @license http://www.opensource.org/licenses/lgpl-2.1.php LGPLv2
   *      @link http://kcfinder.sunhater.com
   */
-
+//var_dump(APP_URL);die;
 // IMPORTANT!!! Do not remove uncommented settings in this file even if
 // you are using session configuration.
 // See http://kcfinder.sunhater.com/install for setting descriptions
 
 //echo $_SERVER['DOCUMENT_ROOT'].'/storedata/FileData/';die;
+
 $_CONFIG = array(
 
     'disabled' => false,
@@ -28,8 +29,8 @@ $_CONFIG = array(
 
     'theme' => "oxygen",
 
-    'uploadURL' => 'http://localhost:81/school/application/storedata/FileData/',
-    'uploadDir' => $_SERVER['DOCUMENT_ROOT'].'/school/application/storedata/FileData/',
+    'uploadURL' => 'http://localhost/jpedu/application/storedata/FileData/',
+    'uploadDir' => $_SERVER['DOCUMENT_ROOT'].'/jpedu/application/storedata/FileData/',
 
     'dirPerms' => 0755,
     'filePerms' => 0644,

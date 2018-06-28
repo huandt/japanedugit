@@ -1,8 +1,8 @@
 <?php
 if ( ! defined('IN_CDT')) exit('No direct script access allowed');  
-class reg_course extends CDT_Controller{
+class course extends CDT_Controller{
    function index(){
-        $this->smarty->assign('page_title', 'Ngochaco | Quản lý đăng ký khóa học');        
+        $this->smarty->assign('page_title', 'JPEDU | Quản lý đăng ký khóa học');        
         $this->smarty->assign_module(
         		array(
 					'header' => 'backend/header',

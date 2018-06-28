@@ -17,4 +17,6 @@ define('FE_CITY', 'sc_city');
 define('FE_EBOOK', 'ebooks');
 define('FE_DISTRICT', 'sc_district');
 define('FE_TEACHER', 'sttb_teacher_info');
+define('FE_COURSE','tbl_course_list');
+define('FE_COURSE_DTL','tbl_course_dtl');
 ?>
