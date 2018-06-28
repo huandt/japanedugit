@@ -1,35 +1,280 @@
-<div id="latestnews">
+<div id="courses" class="section">
 
-    <div class="slider-wrapper theme-default">
-        <div id="slider" class="nivoSlider">
-            <a href="javascript:;"><img src="{site_url()}webskins/images/anh truong 1.JPG" /></a>
-        {foreach from=$list_hot item=news}            
-            <a href="{detail_news($news.id,$news.title)}"><img src="{$news.img_url}" data-thumb="{$news.img_url}" alt="" title="{$news.title}"  /></a>
-        {/foreach}
+            <!-- container -->
+            <div class="container">
+
+                <!-- row -->
+                <div class="row">
+                    <div class="section-header text-center">
+                        <h2>VIDEO LỚP GIAO TIẾP</h2>
+                    </div>
+                </div>
+                <!-- /row -->
+                <script>
+                        $('#courses').on("click","a.about-video", function (e) {
+                            e.preventDefault();
+                            video = '<iframe width="100%" height="241px" src="'+ $(this).attr('data-video') +'"></iframe>';
+                            $(this).replaceWith(video);
+                       });
+                </script>
+                <!-- courses -->
+                <div id="courses-wrapper">
+                    <!-- row -->
+                    <div class="row">
+
+                        <!-- single course -->
+                        <div class="col-md-4 col-sm-6 col-xs-6">
+                            <div class="course">
+                                <a class="about-video" href="javascript:;" data-video="http://www.youtube.com/embed/zP_D_YKnwi0?autoplay=1">
+                                    <div id="play"></div>
+                                    <img src="./img/about-video.jpg" alt="">
+                                    <i class="play-icon fa fa-play re"></i>
+                                </a>
+                                <a class="course-title">All You Need To Know About Web Design</a>
+                            </div>
+                        </div>
+                        <!-- /single course -->
+                        <!-- single course -->
+                        <div class="col-md-4 col-sm-6 col-xs-6">
+                            <div class="course">
+                                <a class="about-video" href="javascript:;" data-video="https://www.youtube.com/embed/MILf3Rvzp4M?autoplay=1">
+                                    <img src="./img/about-video.jpg" alt="">
+                                    <i class="play-icon fa fa-play"></i>
+                                </a>
+                                <a class="course-title">How to Get Started in Photography</a>
+                            </div>
+                        </div>
+                        <!-- /single course -->
+
+
+                        <!-- single course -->
+                        <div class="col-md-4 col-sm-6 col-xs-6">
+                            <div class="course">
+                                <a class="about-video" href="#">
+                                    <img src="./img/about-video.jpg" alt="" data-video="http://www.youtube.com/embed/zP_D_YKnwi0?autoplay=1">
+                                    <i class="play-icon fa fa-play"></i>
+                                </a>
+                                <a class="course-title">Typography From A to Z</a>
+                            </div>
+                        </div>
+                        <!-- /single course -->
+
+                    </div>
+                    <!-- /row -->
+
+                </div>
+                <!-- /courses -->
+
+            </div>
+            <!-- container -->
+
+        </div>
+        <!-- /Courses -->
+
+        <!-- Why us -->
+        <div id="why-us" class="section">
+
+            <!-- container -->
+            <div class="container">
+
+                <!-- row -->
+                <div class="row">
+                    <div class="section-header text-center">
+                        <h2>LỘ TRÌNH HỌC TIẾNG NHẬT</h2>
+                    </div>
+
+                    <!-- feature -->
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="feature">
+                            <img class="img-responsive" src="{$skin_front}/img/lotrinh.jpg">
+                        </div>
+                    </div>
+                    <!-- /feature -->
+
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+
+        </div>
+        <!-- /Why us -->
+        <div id="courses" class="section">
+
+            <!-- container -->
+            <div class="container">
+
+                <!-- row -->
+                <div class="row">
+                    <div class="section-header text-center">
+                        <h2>CÁC KHÓA HỌC</h2>
+                    </div>
+                </div>
+                <!-- /row -->
+
+                <!-- courses -->
+                <div id="courses-wrapper">
+
+                    <!-- row -->
+                    <div class="row">
+
+                        <!-- single course -->
+                        <div class="col-md-4 col-sm-6 col-xs-6">
+                            <div class="course">
+                                <a href="#" class="course-img">
+                                    <img src="./img/course05.jpg" alt="">
+                                    <i class="course-link-icon">PHP Tips</i>
+                                </a>
+                                <a class="course-title">PHP Tips, Tricks, and Techniques</a>
+                            </div>
+                        </div>
+                        <!-- /single course -->
+
+                        <!-- single course -->
+                        <div class="col-md-4 col-sm-6 col-xs-6">
+                            <div class="course">
+                                <a href="#" class="course-img">
+                                    <img src="./img/course06.jpg" alt="">
+                                    <i class="course-link-icon">DOANH NGHIỆP</i>
+                                </a>
+                                <a class="course-title">All You Need To Know About Web Design</a>
+                            </div>
+                        </div>
+                        <!-- /single course -->
+
+                        <!-- single course -->
+                        <div class="col-md-4 col-sm-6 col-xs-6">
+                            <div class="course">
+                                <a href="#" class="course-img">
+                                    <img src="./img/course07.jpg" alt="">
+                                    <i class="course-link-icon">GIAO TIẾP</i>
+                                </a>
+                                <a class="course-title">How to Get Started in Photography All You Need To Know About Web Design</a>
+                            </div>
+                        </div>
+                        <!-- /single course -->
+
+                    </div>
+                    <!-- /row -->
+
+                </div>
+                <!-- /courses -->
+
+            </div>
+            <!-- container -->
+
         </div>
 
-        <div id="htmlcaption" class="nivo-html-caption">
-            <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+
+
+
+        <div id="about" class="section bg-about">
+
+            <!-- container -->
+            <div class="container">
+
+                <!-- row -->
+                <div class="row">
+
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="section-header text-center">
+                            <h2>VÌ SAO CHỌN TOMODACHI</h2>
+                        </div>
+
+                        <!-- feature -->
+                        <div class="feature">
+                            <i class="feature-icon fa fa-diamond"></i>
+                            <div class="feature-content">
+                                <h5>Chất lượng cao </h5>
+                            </div>
+                        </div>
+                        <!-- /feature -->
+
+                        <!-- feature -->
+                        <div class="feature">
+                            <i class="feature-icon fa fa-users"></i>
+                            <div class="feature-content">
+                                <h5>Có độ tương tác với giáo viên </h5>
+                            </div>
+                        </div>
+                        <!-- /feature -->
+
+                        <!-- feature -->
+                        <div class="feature">
+                            <i class="feature-icon fa fa-comments"></i>
+                            <div class="feature-content">
+                                <h5>Phương pháp tăng cường khả năng nhớ và bật phản xạ </h5>
+                            </div>
+                        </div>
+                        <!-- /feature -->
+                        <div class="feature">
+                            <i class="feature-icon fa fa-pencil-square-o"></i>
+                            <div class="feature-content">
+                                <h5>Tài liệu chuyên biệt thiết kế cho từng đối tượng và chuyên ngành </h5>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="feature-icon fa fa-handshake-o"></i>
+                            <div class="feature-content">
+                                <h5>Là đối tác của nhiều công ty Nhật tại Việt Nam </h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- row -->
+
+            </div>
+            <!-- container -->
         </div>
-    </div>
-    <h2>Tin tức sự kiện nổi bật</h2>
-    <ul>
-    {foreach from=$list item=news}
-      <li class="clear {if $news.i==6}last{else} {/if}">
-        <div class="imgl"><a href="{$news.link_detail}"><img src="{$news.img_url}" alt="" /></a></div>
-        <div class="latestnews">
-          <p><a href="{$news.link_detail}">{$news.title}</a></p>
-          <p>{$news.description|truncate:150}</p>
+
+        <div id="courses" class="section">
+
+            <!-- container -->
+            <div class="container">
+
+                <!-- row -->
+                <div class="row">
+                    <div class="section-header text-center">
+                        <h2>GIẢNG VIÊN</h2>
+                    </div>
+                </div>
+                <!-- /row -->
+
+                <!-- courses -->
+                <div id="courses-wrapper">
+
+                    <!-- row -->
+                    <div class="row">
+
+                        <!-- single course -->
+                        <div class="col-md-2 col-sm-6 col-xs-6 col-md-offset-4">
+                            <div class="course-gv">
+                                <a href="#" class="course-img">
+                                    <img src="{$skin_front}/img/gv1.jpg" alt="">
+                                </a>
+                                <a class="course-title" href="#">NGUYỄN THỊ HÀ</a>
+                            </div>
+                        </div>
+                        <!-- /single course -->
+
+                        <!-- single course -->
+                        <div class="col-md-2 col-sm-6 col-xs-6">
+                            <div class="course-gv">
+                                <a href="#" class="course-img">
+                                    <img src="{$skin_front}/img/gv2.jpg" alt="">
+                                </a>
+                                <a class="course-title" href="#">NGUYỄN THỊ LIÊN</a>
+                            </div>
+                        </div>
+                        <!-- /single course -->
+
+                    </div>
+                    <!-- /row -->
+
+                </div>
+                <!-- /courses -->
+
+            </div>
+            <!-- container -->
+
         </div>
-      </li>
-      {/foreach}
-    </ul>
-    <p class="readmore"><a href="{site_url('tin-tuc')}">Xem tất cả</a></p>
-</div>
-{literal}
-<script type="text/javascript">
-    $(window).load(function() {
-        $('#slider').nivoSlider();
-    });  
-</script>
-{/literal}

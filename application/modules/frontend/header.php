@@ -7,14 +7,17 @@ class header extends Module{
     function script(){        
         $js = array(
             'header' => array(
-                'libs/jquery.js'
+                'frontend/jquery.min.js',
             ),
             'footer' => array(                
-                
+                'frontend/bootstrap.min.js',
+                'frontend/main.js',
             )   
         );
         $css = array(
-            'school/styles/layout.css'
+            'tomodachi/css/font-awesome.min.css',
+            'tomodachi/css/bootstrap.min.css',
+            'tomodachi/css/style.css'
         );        
         return array('js'=>$js,'css'=>$css);
     }
@@ -27,7 +30,7 @@ class header extends Module{
         //danh muc tin tuc
         $assign = array(
             'local' => $params['local'],
-            'skin_front' => SKIN_SCHOOL          
+            'skin_front' => SKIN_FRONTEND          
         );
         $this->smarty->assign($assign);
         $this->load->skins('frontend');

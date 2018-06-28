@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>{$page_title}</title>
+		<meta name="description" content="{$meta_description}" />
+		<meta name="keywords" content="{$meta_keyword}" />
+		<base href="{base_url()}"/>
+		{$header_script}
+    </head>
+	<body>
+
+		<!-- Header -->
+		{$header}
+		<!-- /Header -->
+
+		<!-- Home -->
+		{$slider}
+		<!-- /Home -->
+		<!-- Courses -->
+		{$main_content}
+
+		<!-- Contact CTA -->
+		{$comment}
+			<!-- /container -->
+
+		</div>
+		<!-- /Contact CTA -->
+
+		<!-- Footer -->
+		{$footer}
+		<!-- /Footer -->
+
+		<!-- preloader -->
+		<div id='preloader'><div class='preloader'></div></div>
+		<!-- /preloader -->
+
+
+		<!-- jQuery Plugins -->
+		{$footer_script}
+	</body>
+</html>

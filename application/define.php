@@ -1,7 +1,7 @@
 <?php
 //define('DS','/');
 define('APP_PATH',dirname(__FILE__).'/');
-define('SITE_TITLE','Sub4Sub');
+define('SITE_TITLE','Tomodachi tiếng Nhật giao tiếp');
 
 
 if (isset($_SERVER['HTTP_HOST'])) {
@@ -10,7 +10,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 	$base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 	
 } else {
-	$base_url = 'http://localhost/pxcl/application/';
+	$base_url = 'http://localhost/japanedugit/application/';
 }
 
 
@@ -31,7 +31,7 @@ define('TEMPLATE_PATH',APP_PATH.'webskins'.DS.'templates'.DS);
 define('LAYOUT_PATH',TEMPLATE_PATH.'layout'.DS);
 define('TEMPLATE_PATH_COMPILE',APP_PATH.'webskins'.DS.'templates_c'.DS);
 define('SKIN_ADMIN',APP_URL.'webskins/skins/backend');
-define('SKIN_FRONTEND',APP_URL.'webskins/skins/frontend');
+define('SKIN_FRONTEND',APP_URL.'webskins/skins/tomodachi');
 
 
 define('CACHE_MODULE_PATH',APP_PATH.'cache'.DS.'modules'.DS);

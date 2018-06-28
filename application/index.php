@@ -5,7 +5,7 @@ define('IN_CDT',true);
 date_default_timezone_set('Asia/Bangkok');
 
 require_once '../constant.php';
-error_reporting(0);
+error_reporting(1);
 require_once 'define.php';
 require_once 'config/define_database.php';
 require_once(SYSTEM_PATH.'Common'.EXT);

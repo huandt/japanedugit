@@ -1,24 +1,20 @@
-<div class="wrapper" style="display:none;">
-  <div id="featured_slide" class="clear">
-    <!-- ###### -->
-    <div class="overlay_left"></div>
-    <div id="featured_content">
-    {foreach from=$list_news item=news}
-      <div class="featured_box" id="fc{$news.i}"><img src="{$news.img_url}" alt="{$news.title}" />
-        <div class="floater">
-          <h2>{$news.title}</h2>
-          <p>{$news.description|truncate:150}</p>
-          <p class="readmore"><a href="{detail_news($news.id,$news.title)}">Chi tiết &raquo;</a></p>
+<div id="home" class="hero-area">
+
+      <!-- Backgound Image -->
+      <div class="bg-image bg-parallax overlay" style="background-image:url({$skin_front}/img/home-background.jpg)"></div>
+      <!-- /Backgound Image -->
+
+      <div class="home-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <h2 class="white-text">Lớp học giao tiếp tiếng nhật chất lượng cao</h2>
+              <div class="center-btn-learn">
+                <a class="main-button icon-button" href="#">Đăng ký học thử</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    {/foreach}
+
     </div>
-    <ul id="featured_tabs">
-    {foreach from=$list_news item=news}
-      <li class="{if $news.i==5}last{else} {/if}"><a href="#fc{$news.i}">{$news.title|truncate:30}</a></li>
-    {/foreach}
-    </ul>
-    <div class="overlay_right"></div>
-    <!-- ###### -->
-  </div>
-</div>

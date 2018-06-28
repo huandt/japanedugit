@@ -7,7 +7,8 @@ class contact_mod extends Module{
         $js = array(
             'header' => array(
             ),
-            'footer' => array(               
+            'footer' => array(
+                'frontend/google-map.js',
             )   
         );        
                 
