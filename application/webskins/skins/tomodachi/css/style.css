@@ -542,8 +542,94 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 		        box-shadow : 0px 0px 0px 10px transparent;
 	}
 }
+.hr-about{
+	height: 5px;
+	width:60%;
+	background-color: #0059e3;
+	margin-left: 21%;
+	margin-top: 90px;
+}
+.end-text-about{
+	margin-top: 60px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.img-about{
+	width:40%;
+	height: 40%;
+	margin-top: 25px;
+}
 
 
+/* -- value core -- */
+.value-core {
+	position:relative;
+}
+
+.feature + .feature  {
+	margin-top:40px;
+}
+
+.value-core .value-core-icon {
+	left:0;
+	top:0;
+	width:120px;
+	height:120px;
+	line-height:55px;
+	text-align:center;
+	border-radius: 50%;
+	font-size:20px;
+	border:3px solid #FFF;
+	color:#FFF;
+}
+
+.value-core img.value-core-icon:hover {
+	left:0;
+	top:0;
+	width:120px;
+	height:120px;
+	line-height:55px;
+	text-align:center;
+	border-radius: 50%;
+	font-size:20px;
+	border:3px solid #00b240;
+	color:#FFF;
+	cursor: pointer;
+}
+
+.value-core img.selected {
+	left:0;
+	top:0;
+	width:120px;
+	height:120px;
+	line-height:55px;
+	text-align:center;
+	border-radius: 50%;
+	font-size:20px;
+	border:3px solid #00b240;
+	color:#FFF;
+	cursor: pointer;
+}
+
+#VideoPlayer {
+ display:block;
+ width:100%;
+ position:relative;
+ transform:scale(1.2);
+ -ms-transform:scale(1.2);
+ -webkit-transform:scale(1.2);
+ -moz-transform:scale(1.2)
+}
+#VideoPlayer::-webkit-media-controls,#VideoPlayer::-webkit-media-controls-start-playback-button {
+ display:none !important;
+ -webkit-appearance:none
+}
+
+@media (min-width: 1280px) and (max-width: 1902px) {
+ #VideoPlayer {
+  height:642px !important;
+ }
+}
 /*------------------------------------*\
 	Courses FEel
 \*------------------------------------*/

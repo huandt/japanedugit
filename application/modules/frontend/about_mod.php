@@ -16,7 +16,8 @@ class about_mod extends Module{
     function draw($param){
         $this->load->skins('frontend');
         $assign = array(
-            'local'  => $param['local']
+            'local'  => $param['local'],
+            'skin_front' => SKIN_FRONTEND
         );
         $this->smarty->assign($assign);
         return $this->smarty->display_module('news/about.html');

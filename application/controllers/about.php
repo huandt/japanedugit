@@ -12,7 +12,7 @@ class about extends CDT_Controller{
                 'header'        => array('frontend/header',array('local' => 'home')),
                 'slider'        => 'frontend/slider',
                 'main_content'  => 'frontend/about_mod',
-                'comment'       => 'frontend/comment',
+                'comment'       => 'frontend/value_core_mod',
                 'footer'        => 'frontend/footer'
             )
         );
@@ -34,7 +34,6 @@ class about extends CDT_Controller{
                 'slider'        => 'frontend/slider',
                 'main_content'  => 'frontend/contact_mod',
                 'comment'       => 'frontend/comment',
-                //'comment'       => 'frontend/value_core_mod',
                 'footer'        => 'frontend/footer'
             )
         );

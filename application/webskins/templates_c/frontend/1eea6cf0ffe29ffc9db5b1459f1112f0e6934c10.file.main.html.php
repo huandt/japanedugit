@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.7, created on 2018-06-28 23:40:57
+<?php /* Smarty version Smarty-3.0.7, created on 2018-06-29 21:55:06
          compiled from "/Applications/XAMPP/xamppfiles/htdocs/japanedugit/application/webskins/templates/frontend/main/main.html" */ ?>
-<?php /*%%SmartyHeaderCode:11860248275b350f9949c7d2-28562863%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:16199490835b36484a370713-36244892%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1eea6cf0ffe29ffc9db5b1459f1112f0e6934c10' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/japanedugit/application/webskins/templates/frontend/main/main.html',
-      1 => 1530204056,
+      1 => 1530284104,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '11860248275b350f9949c7d2-28562863',
+  'nocache_hash' => '16199490835b36484a370713-36244892',
   'function' => 
   array (
   ),
@@ -30,11 +30,11 @@ $_smarty_tpl->decodeProperties(array (
                 </div>
                 <!-- /row -->
                 <script>
-                        $('#courses').on("click","a.about-video", function (e) {
+                        /*$('#courses').on("click","a.about-video", function (e) {
                             e.preventDefault();
                             video = '<iframe width="100%" height="241px" src="'+ $(this).attr('data-video') +'"></iframe>';
                             $(this).replaceWith(video);
-                       });
+                       });*/
                 </script>
                 <!-- courses -->
                 <div id="courses-wrapper">
@@ -46,8 +46,9 @@ $_smarty_tpl->decodeProperties(array (
                             <div class="course">
                                 <a class="about-video" href="javascript:;" data-video="http://www.youtube.com/embed/zP_D_YKnwi0?autoplay=1">
                                     <div id="play"></div>
-                                    <img src="./img/about-video.jpg" alt="">
-                                    <i class="play-icon fa fa-play re"></i>
+                                    <img src="<?php echo $_smarty_tpl->getVariable('skin_front')->value;?>
+/img/IMG_0719.jpg" alt="">
+                                    <!--i class="play-icon fa fa-play re"></i-->
                                 </a>
                                 <a class="course-title">All You Need To Know About Web Design</a>
                             </div>
@@ -56,11 +57,13 @@ $_smarty_tpl->decodeProperties(array (
                         <!-- single course -->
                         <div class="col-md-4 col-sm-6 col-xs-6">
                             <div class="course">
-                                <a class="about-video" href="javascript:;" data-video="https://www.youtube.com/embed/MILf3Rvzp4M?autoplay=1">
-                                    <img src="./img/about-video.jpg" alt="">
-                                    <i class="play-icon fa fa-play"></i>
+                                <a class="about-video" href="javascript:;" data-video="http://www.youtube.com/embed/zP_D_YKnwi0?autoplay=1">
+                                    <div id="play"></div>
+                                    <img src="<?php echo $_smarty_tpl->getVariable('skin_front')->value;?>
+/img/IMG_0719.jpg" alt="">
+                                    <!--i class="play-icon fa fa-play re"></i-->
                                 </a>
-                                <a class="course-title">How to Get Started in Photography</a>
+                                <a class="course-title">All You Need To Know About Web Design</a>
                             </div>
                         </div>
                         <!-- /single course -->
@@ -69,11 +72,13 @@ $_smarty_tpl->decodeProperties(array (
                         <!-- single course -->
                         <div class="col-md-4 col-sm-6 col-xs-6">
                             <div class="course">
-                                <a class="about-video" href="#">
-                                    <img src="./img/about-video.jpg" alt="" data-video="http://www.youtube.com/embed/zP_D_YKnwi0?autoplay=1">
-                                    <i class="play-icon fa fa-play"></i>
+                                <a class="about-video" href="javascript:;" data-video="http://www.youtube.com/embed/zP_D_YKnwi0?autoplay=1">
+                                    <div id="play"></div>
+                                    <img src="<?php echo $_smarty_tpl->getVariable('skin_front')->value;?>
+/img/IMG_0719.jpg" alt="">
+                                    <!--i class="play-icon fa fa-play re"></i-->
                                 </a>
-                                <a class="course-title">Typography From A to Z</a>
+                                <a class="course-title">All You Need To Know About Web Design</a>
                             </div>
                         </div>
                         <!-- /single course -->
