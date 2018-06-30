@@ -1,0 +1,2 @@
+ALTER TABLE `tbl_course_list` ADD `image` VARCHAR(100) NULL AFTER `time_created`, ADD `description` TEXT NULL AFTER `image`;
+ALTER TABLE `tbl_course_dtl` CHANGE `text` `content` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;

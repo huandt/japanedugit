@@ -1,5 +1,6 @@
 <?php
-class reg_course_mod extends Module{
+
+class add_course_mod extends Module{
     public $notice = '';
     public $type   = 0; 
     function __construct()
@@ -37,20 +38,21 @@ class reg_course_mod extends Module{
     function submit(){        
         $id                     = $this->input->post('id');
         $data['title']          = $this->input->post('title');
-        $data['url_fix']        = $this->input->post('url_fix');
-        $data['cate_id']        = $this->input->post('category');
+        //$data['url_fix']        = $this->input->post('url_fix');
+        //$data['cate_id']        = $this->input->post('category');
         $data['description']    = $this->input->post('description');
-        $data['content']        = $this->input->post('content');
-        $data['active']         = $this->input->post('status');        
-        $data['time_create']    = time();        
+        //$data['content']        = $this->input->post('content');
+        $data['status']         = $this->input->post('status');        
+        $data['time_created']    = time();        
         
         //upload anh
         $imageName      = $_FILES['image']['name'];
         if($imageName){
             $res_file_name  = $imageName;
             $x = explode('.', $imageName);
-            $imageName = time().'.'.end($x);            
-            $config['upload_path']      = STORE_DATA.'news';
+            $imageName = time().'.'.end($x);
+            
+            $config['upload_path']      = STORE_DATA.'course';
             $config['allowed_types']    = 'gif|jpg|png|jpeg';
             $config['max_size']         = '5048';
             $config['max_width']        = '5048';
@@ -65,15 +67,15 @@ class reg_course_mod extends Module{
         }
         if(!$id)
         {
-            $this->fe_model->insert(FE_NEWS, $data);
+            $this->fe_model->insert(FE_COURSE, $data);
             $this->notice = 'Thêm mới thành công';
-            redirect('admin/news');
+            redirect('admin/course');
         }
         else if($id > 0)
         {
-            $this->fe_model->update(FE_NEWS, array('id' => $id), $data);
+            $this->fe_model->update(FE_COURSE, array('id' => $id), $data);
             $this->notice = 'Cập nhật thành công';            
-            //redirect('admin/news/form/'.$id);
+            
         }
     }
     
@@ -110,18 +112,8 @@ class reg_course_mod extends Module{
             $offset = ($offset - 1)*$config['per_page'];
             $this->load->library('pagination');
             $this->pagination->initialize($config);
-
-            $data      = $this->fe_model->select(FE_COURSE, '*', $condition, $like, 'id DESC', $config['per_page'], $offset);
-            $user_list = array();
-            $cat_list  = array();
-            foreach ($data as $key => $value) {
-                $user_list[] = $value['user_id'];
-                $cat_list[]  = $value['guide_category_id'];
-            }          
-
             $this->load->helper('form');
-            $data_cat = $this->fe_model->select(MK_CATEGORY, '*', null, null, 'ordering ASC');
-
+            
             $assign = array(
                 'data'          => $data,
                 'author_list'   => $author_list,
@@ -132,8 +124,7 @@ class reg_course_mod extends Module{
                 'paging'        => $this->pagination->create_links_page(),
                 'title'         => $like['title'],
                 'category'      => $condition['guide_category_id'],
-                'form_cat'      => form_open('', '',array('enctype'=>'multipart/form-data', 'id' => 'form_cat')),
-                'data_cat'      => $data_cat
+                'form_cat'      => form_open('', '',array('enctype'=>'multipart/form-data', 'id' => 'form_cat')),                
             );
             
             $this->smarty->assign($assign);
@@ -144,26 +135,20 @@ class reg_course_mod extends Module{
             $id = $params['id'];
             if($id)
             {
-                $data = $this->fe_model->select_one(FE_NEWS, '*', array('id' => $id));
+                $data = $this->fe_model->select_one(FE_COURSE, '*', array('id' => $id));
                 $page_title = 'Sửa nội dung - '.$data['title'].' | Quản trị';
             }
             else
             {
-                $page_title = 'Thêm nội dung | Quản trị';
-            }            
-
-            $data_cat = $this->fe_model->select(MK_CATEGORY, 'name, id', array('active' => 1));
-            foreach ($data_cat as $key => $value) {
-                $category_list[$value['id']] = $value['name'];
-            }
-            $this->load->library('Cache_Lib');
-            $list_category  = $this->cache_lib->cache_list_category();
+                $page_title = 'Thêm khoá học | Quản trị';
+            }     
+         
             $this->load->helper('form');
             $assign = array(
                 'id'            => $id,
                 'page_title'    => $page_title,
                 'category_list' => $this->input->array_to_option($list_category,$data['cate_id']),
-                'form_edit'     => form_open('backend/add_new_mod', '',array('enctype'=>'multipart/form-data', 'id' => 'form_guide_edit')),
+                'form_edit'     => form_open('backend/add_course_mod', '',array('enctype'=>'multipart/form-data', 'id' => 'form_guide_edit')),
                 'notice'        => $this->notice,
                 'data'          => $data
             );            
@@ -173,4 +158,5 @@ class reg_course_mod extends Module{
         }
     }
 }
+
 ?>

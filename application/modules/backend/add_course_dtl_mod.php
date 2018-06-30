@@ -1,5 +1,6 @@
 <?php
-class reg_course_mod extends Module{
+
+class add_course_dtl_mod extends Module{
     public $notice = '';
     public $type   = 0; 
     function __construct()
@@ -36,21 +37,23 @@ class reg_course_mod extends Module{
     
     function submit(){        
         $id                     = $this->input->post('id');
-        $data['title']          = $this->input->post('title');
-        $data['url_fix']        = $this->input->post('url_fix');
-        $data['cate_id']        = $this->input->post('category');
-        $data['description']    = $this->input->post('description');
+        $data['course_name']          = $this->input->post('course_name');
+        //$data['url_fix']        = $this->input->post('url_fix');
+        $data['course_id']        = $this->input->post('course_id');
+        
         $data['content']        = $this->input->post('content');
-        $data['active']         = $this->input->post('status');        
-        $data['time_create']    = time();        
+        $data['status']         = $this->input->post('status');        
+        $data['time_created']    = time();        
+        $data['ordering'] = $this->input->post('ordering');
         
         //upload anh
         $imageName      = $_FILES['image']['name'];
         if($imageName){
             $res_file_name  = $imageName;
             $x = explode('.', $imageName);
-            $imageName = time().'.'.end($x);            
-            $config['upload_path']      = STORE_DATA.'news';
+            $imageName = time().'.'.end($x);
+            
+            $config['upload_path']      = STORE_DATA.'course';
             $config['allowed_types']    = 'gif|jpg|png|jpeg';
             $config['max_size']         = '5048';
             $config['max_width']        = '5048';
@@ -60,18 +63,18 @@ class reg_course_mod extends Module{
             $this->upload->initialize($config);
             $res = $this->upload->do_upload('image');            
             if($imageName && $res === true){
-                $data['image'] = $imageName;
-            }         
+                $data['img'] = $imageName;
+            }
         }
         if(!$id)
         {
-            $this->fe_model->insert(FE_NEWS, $data);
+            $this->fe_model->insert(FE_COURSE_DTL, $data);
             $this->notice = 'Thêm mới thành công';
-            redirect('admin/news');
+            redirect('admin/course/course_dtl_list');
         }
         else if($id > 0)
         {
-            $this->fe_model->update(FE_NEWS, array('id' => $id), $data);
+            $this->fe_model->update(FE_COURSE_DTL, array('id' => $id), $data);
             $this->notice = 'Cập nhật thành công';            
             //redirect('admin/news/form/'.$id);
         }
@@ -95,8 +98,8 @@ class reg_course_mod extends Module{
                 $end_url .= '&';
             }
 
-            $total_data            = $this->fe_model->count(FE_COURSE, $condition, $like);
-            $config['base_url']    = site_url('admin/course/index');
+            $total_data            = $this->fe_model->count(FE_COURSE_DTL, $condition, $like);
+            $config['base_url']    = site_url('admin/news/index');
             $config['end_url']     = ($end_url == '' ? '' : rtrim($end_url,'&'));
             $config['per_page']    = 20;
             $config['total_rows']  = $total_data;
@@ -111,13 +114,14 @@ class reg_course_mod extends Module{
             $this->load->library('pagination');
             $this->pagination->initialize($config);
 
-            $data      = $this->fe_model->select(FE_COURSE, '*', $condition, $like, 'id DESC', $config['per_page'], $offset);
+            $data      = $this->fe_model->select(FE_COURSE_DTL, '*', $condition, $like, 'id DESC', $config['per_page'], $offset);
             $user_list = array();
             $cat_list  = array();
             foreach ($data as $key => $value) {
                 $user_list[] = $value['user_id'];
                 $cat_list[]  = $value['guide_category_id'];
-            }          
+            }
+           
 
             $this->load->helper('form');
             $data_cat = $this->fe_model->select(MK_CATEGORY, '*', null, null, 'ordering ASC');
@@ -137,40 +141,41 @@ class reg_course_mod extends Module{
             );
             
             $this->smarty->assign($assign);
-            return $this->smarty->display_module('course/index.html');
+            return $this->smarty->display_module('news/index.html');
         }
         if($params['mode'] == 'form')
         {
             $id = $params['id'];
             if($id)
             {
-                $data = $this->fe_model->select_one(FE_NEWS, '*', array('id' => $id));
-                $page_title = 'Sửa nội dung - '.$data['title'].' | Quản trị';
+                $data = $this->fe_model->select_one(FE_COURSE_DTL, '*', array('id' => $id));
+                $page_title = 'Sửa khóa học chi tiết - '.$data['title'].' | Quản trị';
             }
             else
             {
-                $page_title = 'Thêm nội dung | Quản trị';
+                $page_title = 'Thêm khóa học chi tiết | Quản trị';
             }            
 
-            $data_cat = $this->fe_model->select(MK_CATEGORY, 'name, id', array('active' => 1));
+            $data_cat = $this->fe_model->select(FE_COURSE, 'title, id', array('status' => 1));
             foreach ($data_cat as $key => $value) {
-                $category_list[$value['id']] = $value['name'];
+                $category_list[$value['id']] = $value['title'];
             }
-            $this->load->library('Cache_Lib');
-            $list_category  = $this->cache_lib->cache_list_category();
+            //$this->load->library('Cache_Lib');
+            //$list_category  = $this->cache_lib->cache_list_category();
             $this->load->helper('form');
             $assign = array(
                 'id'            => $id,
                 'page_title'    => $page_title,
-                'category_list' => $this->input->array_to_option($list_category,$data['cate_id']),
-                'form_edit'     => form_open('backend/add_new_mod', '',array('enctype'=>'multipart/form-data', 'id' => 'form_guide_edit')),
+                'category_list' => $this->input->array_to_option($category_list,$data['course_id']),
+                'form_edit'     => form_open('backend/add_course_dtl_mod', '',array('enctype'=>'multipart/form-data', 'id' => 'form_guide_edit')),
                 'notice'        => $this->notice,
                 'data'          => $data
             );            
             
             $this->smarty->assign($assign);
-            return $this->smarty->display_module('course/form.html');
+            return $this->smarty->display_module('course/dtl_form.html');
         }
     }
 }
+
 ?>

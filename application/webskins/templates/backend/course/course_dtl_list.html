@@ -1,9 +1,9 @@
 <h6 class="title">
     <i class="icon-user"></i>
-    Quản trị tin tức
+    Quản trị danh sách chi tiết khóa học
 </h6>
     <div class="fix"></div>
-    <a href="{site_url("admin/course/form")}" class="btn btn-success" style="margin-bottom: 12px;"><i class="icon-plus icon-white"></i> Thêm mới</a>
+    <a href="{site_url("admin/course/add_course_detail")}" class="btn btn-success" style="margin-bottom: 12px;"><i class="icon-plus icon-white"></i> Thêm mới</a>
     <!--
     <a href="{site_url("admin/category")}" class="btn btn-success" style="margin-bottom: 12px;"><i class="icon-plus icon-white"></i> Thêm danh mục</a>-->
 <div class="box-content">
@@ -53,24 +53,19 @@
         {foreach from = $data item = item key = key}
         <tr>
             <td>{$offset + $key +1}</td>
-            <td><b>{$item.title|truncate:90}</b></td>
+            <td><b>{$item.course_name|truncate:90}</b></td>
             <td>{$item.time_created|date_format:"%d/%m/%y %H:%M:%S"}</td>            
             <td><a href="javascript:;" class="guide-cat-explore">                
-                {imagesize src=$item.image width=60 height=60 source='course' default='default_300_300.png'}
+                {imagesize src=$item.img width=60 height=60 source='course' default='default_300_300.png'}
             </a></td>
             <!--<td>{$list_category[$item.cate_id]}</td>
              <td  class="blue editable" lang="{$item.id}">
                     {$item.ordering}
             </td>-->
             <td>
-                <a href="admin/course/form/{$item.id}" class="btn btn-info"><i class="icon-edit icon-white"></i></a>
-
-                <a href="javascript:;" class="btn lock-guide {if $item.status == 1}btn-success{else}btn-danger{/if}" data-id="{$item.id}" data-placement="top" rel="tooltip" data-original-title="Disable/Enable" data-id="{$item.id}" data-status="{$item.active}"><i class="icon-lock icon-white"></i></a>
-
-                <a data-original-title="Xóa" rel="tooltip" data-placement="top" data-id="{$item.id}" class="btn del-guide btn-danger"><i class="icon-trash icon-white"></i></a>
-                
-                <div style="margin-top:5px;"><a data-original-title="Tin nổi bật" rel="tooltip" data-placement="top" data-id="{$item.id}" class="btn set-hot {if $item.hot == 1}btn-success{else}btn-danger{/if}"><i class="icon-flag icon-white"></i></a>
-                    <a class="btn btn-success" href="{site_url("admin/course/add_img")}?id={$item.id}" title="Thêm ảnh"><i class="icon-plus icon-white"></i></a>
+                <a href="admin/course/add_course_detail/{$item.id}" class="btn btn-info"><i class="icon-edit icon-white"></i></a>
+                <a data-original-title="Xóa" rel="tooltip" data-placement="top" data-id="{$item.id}" class="btn del-guide btn-danger"><i class="icon-trash icon-white"></i></a>               
+               
                 </div>
                 
             </td>

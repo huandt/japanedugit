@@ -1,5 +1,5 @@
 <?php
-class reg_course_mod extends Module{
+class course_dtl_list_mod extends Module{
     public $notice = '';
     public $type   = 0; 
     function __construct()
@@ -50,7 +50,7 @@ class reg_course_mod extends Module{
             $res_file_name  = $imageName;
             $x = explode('.', $imageName);
             $imageName = time().'.'.end($x);            
-            $config['upload_path']      = STORE_DATA.'news';
+            $config['upload_path']      = STORE_DATA.'course';
             $config['allowed_types']    = 'gif|jpg|png|jpeg';
             $config['max_size']         = '5048';
             $config['max_width']        = '5048';
@@ -63,7 +63,7 @@ class reg_course_mod extends Module{
                 $data['image'] = $imageName;
             }         
         }
-        if(!$id)
+        /*if(!$id)
         {
             $this->fe_model->insert(FE_NEWS, $data);
             $this->notice = 'Thêm mới thành công';
@@ -74,7 +74,7 @@ class reg_course_mod extends Module{
             $this->fe_model->update(FE_NEWS, array('id' => $id), $data);
             $this->notice = 'Cập nhật thành công';            
             //redirect('admin/news/form/'.$id);
-        }
+        }*/
     }
     
     function draw($params){       
@@ -95,7 +95,7 @@ class reg_course_mod extends Module{
                 $end_url .= '&';
             }
 
-            $total_data            = $this->fe_model->count(FE_COURSE, $condition, $like);
+            $total_data            = $this->fe_model->count(FE_COURSE_DTL, $condition, $like);
             $config['base_url']    = site_url('admin/course/index');
             $config['end_url']     = ($end_url == '' ? '' : rtrim($end_url,'&'));
             $config['per_page']    = 20;
@@ -110,8 +110,8 @@ class reg_course_mod extends Module{
             $offset = ($offset - 1)*$config['per_page'];
             $this->load->library('pagination');
             $this->pagination->initialize($config);
-
-            $data      = $this->fe_model->select(FE_COURSE, '*', $condition, $like, 'id DESC', $config['per_page'], $offset);
+          
+            $data      = $this->fe_model->select(FE_COURSE_DTL, '*', $condition, $like, 'id DESC', $config['per_page'], $offset);
             $user_list = array();
             $cat_list  = array();
             foreach ($data as $key => $value) {
@@ -120,7 +120,7 @@ class reg_course_mod extends Module{
             }          
 
             $this->load->helper('form');
-            $data_cat = $this->fe_model->select(MK_CATEGORY, '*', null, null, 'ordering ASC');
+            $data_cat = $this->fe_model->select(FE_COURSE, '*', null, null, 'id ASC');
 
             $assign = array(
                 'data'          => $data,
@@ -137,7 +137,7 @@ class reg_course_mod extends Module{
             );
             
             $this->smarty->assign($assign);
-            return $this->smarty->display_module('course/index.html');
+            return $this->smarty->display_module('course/course_dtl_list.html');
         }
         if($params['mode'] == 'form')
         {
