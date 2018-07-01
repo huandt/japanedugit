@@ -44,7 +44,7 @@ $active_record = TRUE;
 $db['db']['hostname'] = 'localhost';
 $db['db']['username'] = 'root';
 $db['db']['password'] = '';
-$db['db']['database'] = 'db_jpedu';
+$db['db']['database'] = 'tomodachi';
 //
 $db['db']['dbdriver'] = 'mysqli';
 $db['db']['dbprefix'] = '';

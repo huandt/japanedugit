@@ -60,10 +60,10 @@ class add_course_mod extends Module{
             $config['file_name']        = $imageName;
             $this->load->library('upload', $config);
             $this->upload->initialize($config);
-            $res = $this->upload->do_upload('image');            
+            $res = $this->upload->do_upload('image'); 
             if($imageName && $res === true){
                 $data['image'] = $imageName;
-            }         
+            }
         }
         if(!$id)
         {

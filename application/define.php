@@ -19,7 +19,7 @@ define ('APP_URL_EDITOR',$base_url.'/storedata/');
 define ('STATIC_URL',$base_url.'/storedata/');
 define ('MEDIA_URL',$base_url);
 define('STORE_DATA',ROOT_PATH.DS.'application/storedata'.DS);
-
+define('STORE_IMAGE',$base_url.DS.'/storedata'.DS);
 
 define('CACHE_PATH',APP_PATH.'cache'.DS);
 define('APP_MODEL_PATH',APP_PATH.'models/');

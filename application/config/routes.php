@@ -46,7 +46,8 @@ $route['tin-tuc/([a-zA-Z0-9/]+)/([a-zA-Z0-9-]+).html']  = 'detail_new/index/$1/$
 $route['(gioi-thieu).html']    = 'about/index';
 $route['(lien-he).html']   = 'about/contact/index';
 $route['tin-tuc']   = 'news/index';
-$route['c/([a-zA-Z0-9/]+)/([a-zA-Z0-9-]+)']  = 'news/news_cate/$1/$2';
+$route['khoa-hoc']   = 'browse/index';
+$route['kh/([a-zA-Z0-9/]+)/([a-zA-Z0-9-]+)']  = 'browse/cate_pro/$1/$2';
 $route['hinh-anh-hoat-dong']   = 'gallery/index';
 $route['tai-lieu']   = 'ebook/index';
 /* End of file routes.php */

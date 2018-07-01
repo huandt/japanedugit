@@ -21,7 +21,6 @@
                 <div id="courses-wrapper">
                     <!-- row -->
                     <div class="row">
-
                         <!-- single course -->
                         <div class="col-md-4 col-sm-6 col-xs-6">
                             <div class="course">
@@ -39,7 +38,7 @@
                             <div class="course">
                                 <a class="about-video" href="javascript:;" data-video="http://www.youtube.com/embed/zP_D_YKnwi0?autoplay=1">
                                     <div id="play"></div>
-                                    <img src="{$skin_front}/img/IMG_0719.jpg" alt="">
+                                    <img src="{$skin_front}/img/DSC_0471.jpg" alt="">
                                     <!--i class="play-icon fa fa-play re"></i-->
                                 </a>
                                 <a class="course-title">All You Need To Know About Web Design</a>
@@ -53,7 +52,7 @@
                             <div class="course">
                                 <a class="about-video" href="javascript:;" data-video="http://www.youtube.com/embed/zP_D_YKnwi0?autoplay=1">
                                     <div id="play"></div>
-                                    <img src="{$skin_front}/img/IMG_0719.jpg" alt="">
+                                    <img src="{$skin_front}/img/about-video.jpg" alt="">
                                     <!--i class="play-icon fa fa-play re"></i-->
                                 </a>
                                 <a class="course-title">All You Need To Know About Web Design</a>
@@ -118,43 +117,19 @@
 
                     <!-- row -->
                     <div class="row">
-
+                        {foreach from=$courses item=value}
                         <!-- single course -->
                         <div class="col-md-4 col-sm-6 col-xs-6">
                             <div class="course">
                                 <a href="#" class="course-img">
-                                    <img src="./img/course05.jpg" alt="">
-                                    <i class="course-link-icon">PHP Tips</i>
+                                    <img src="{$storeData}/course/{$value.image}" alt="">
+                                    <i class="course-link-icon">{$value.title}</i>
                                 </a>
-                                <a class="course-title">PHP Tips, Tricks, and Techniques</a>
+                                <a class="course-title">{$value.title}</a>
                             </div>
                         </div>
                         <!-- /single course -->
-
-                        <!-- single course -->
-                        <div class="col-md-4 col-sm-6 col-xs-6">
-                            <div class="course">
-                                <a href="#" class="course-img">
-                                    <img src="./img/course06.jpg" alt="">
-                                    <i class="course-link-icon">DOANH NGHIỆP</i>
-                                </a>
-                                <a class="course-title">All You Need To Know About Web Design</a>
-                            </div>
-                        </div>
-                        <!-- /single course -->
-
-                        <!-- single course -->
-                        <div class="col-md-4 col-sm-6 col-xs-6">
-                            <div class="course">
-                                <a href="#" class="course-img">
-                                    <img src="./img/course07.jpg" alt="">
-                                    <i class="course-link-icon">GIAO TIẾP</i>
-                                </a>
-                                <a class="course-title">How to Get Started in Photography All You Need To Know About Web Design</a>
-                            </div>
-                        </div>
-                        <!-- /single course -->
-
+                        {/foreach}
                     </div>
                     <!-- /row -->
 
@@ -186,7 +161,7 @@
                         <div class="feature">
                             <i class="feature-icon fa fa-diamond"></i>
                             <div class="feature-content">
-                                <h5>Chất lượng cao </h5>
+                                <h4>Chất lượng cao </h4>
                             </div>
                         </div>
                         <!-- /feature -->
@@ -195,7 +170,7 @@
                         <div class="feature">
                             <i class="feature-icon fa fa-users"></i>
                             <div class="feature-content">
-                                <h5>Có độ tương tác với giáo viên </h5>
+                                <h4>Có độ tương tác với giáo viên </h4>
                             </div>
                         </div>
                         <!-- /feature -->
@@ -204,20 +179,20 @@
                         <div class="feature">
                             <i class="feature-icon fa fa-comments"></i>
                             <div class="feature-content">
-                                <h5>Phương pháp tăng cường khả năng nhớ và bật phản xạ </h5>
+                                <h4>Phương pháp tăng cường khả năng nhớ và bật phản xạ </h4>
                             </div>
                         </div>
                         <!-- /feature -->
                         <div class="feature">
                             <i class="feature-icon fa fa-pencil-square-o"></i>
                             <div class="feature-content">
-                                <h5>Tài liệu chuyên biệt thiết kế cho từng đối tượng và chuyên ngành </h5>
+                                <h4>Tài liệu chuyên biệt thiết kế cho từng đối tượng và chuyên ngành </h4>
                             </div>
                         </div>
                         <div class="feature">
                             <i class="feature-icon fa fa-handshake-o"></i>
                             <div class="feature-content">
-                                <h5>Là đối tác của nhiều công ty Nhật tại Việt Nam </h5>
+                                <h4>Là đối tác của nhiều công ty Nhật tại Việt Nam </h4>
                             </div>
                         </div>
 

@@ -31,9 +31,16 @@ Table OF Contents
 	General
 \*------------------------------------*/
 /* --- typography --- */
+@font-face {
+  font-family: "Baomoi";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/baomoi_gdi.eot");
+  src: url("../fonts/Baomoi_gdi.woff");
+  }
 body {
-    font-family: 'Montserrat', sans-serif;
-	font-size: 15px;
+    font-family: 'Baomoi';
+	font-size: 16px;
     font-weight: 400;
     color: #798696;
 	overflow-x:hidden;
@@ -609,6 +616,10 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	border:3px solid #00b240;
 	color:#FFF;
 	cursor: pointer;
+}
+
+.green-text{
+	color: #00b240;
 }
 
 #VideoPlayer {

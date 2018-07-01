@@ -1,3 +1,6 @@
 
 *.cache
 /application/webskins/templates_c
+application/config/database.php
+application/config/database.php
+application/.DS_Store
