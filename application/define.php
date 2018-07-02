@@ -1,7 +1,7 @@
 <?php
 //define('DS','/');
 define('APP_PATH',dirname(__FILE__).'/');
-define('SITE_TITLE','Tomodachi tiếng Nhật giao tiếp');
+define('SITE_TITLE','Trung tâm tiếng Nhật Tomodachi');
 
 
 if (isset($_SERVER['HTTP_HOST'])) {

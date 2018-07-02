@@ -1,0 +1,38 @@
+		<div id="courses" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="section-header text-center">
+						<h2>KHOÁ HỌC VỀ</h2>
+					</div>
+				</div>
+				<!-- /row -->
+				<!-- courses -->
+				<div id="courses-wrapper">
+					<!-- row -->
+					<div class="row">
+						<!-- single course -->
+						{foreach from=$courses item=value}
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="course">
+								<a href="{browse_url($value.id,$value.title)}" class="course-img">
+									<img src="{$storeData}/course/{$value.image}" alt="">
+									<i class="course-link-icon">{$value.title}</i>
+								</a>
+								<a href="{browse_url($value.id,$value.title)}" class="course-title">{$value.title}</a>
+							</div>
+						</div>
+						{/foreach}
+						<!-- /single course -->			
+					</div>
+					<!-- /row -->
+
+				</div>
+				<!-- /courses -->
+
+			</div>
+			<!-- container -->
+
+		</div>
+		<!-- /Courses -->

@@ -70,7 +70,6 @@ h4 {
 }
 
 a {
-	font-family: 'Lato', sans-serif;
 	color: #374050;
 	font-weight: 700;
 }
@@ -224,6 +223,22 @@ textarea {
 }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="number"]:focus, input[type="date"]:focus, input[type="url"]:focus, input[type="tel"]:focus, textarea:focus {
+	border-color:#00b240;
+}
+
+.input-select {
+    height: 40px;
+    width: 100%;
+    border: 1px solid #EBEBEB;
+	border-radius:4px;
+	background: transparent;
+    padding-left: 15px;
+	padding-right: 15px;
+	-webkit-transition:0.2s border-color;
+	transition:0.2s border-color;
+}
+
+.input-select:focus{
 	border-color:#00b240;
 }
 
@@ -898,34 +913,33 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	color: #FF6700;
 }
 
-.active{
+.active-one{
 	background-color: #00b240;
 	opacity: 0.6;
 	color: #FFF;
 }
-.active .course-dt .course-title {
+.active-one .course-dt .course-title {
 	color: #FFF !important;
 }
-
 /* Tab */
 
 #exTab1 .tab-content {
-  color : white;
-  background-color: #428bca;
+  background-color: #F9F9F9;
   padding : 5px 15px;
-}
-
-#exTab2 h3 {
-  color : white;
-  background-color: #428bca;
-  padding : 5px 15px;
+  border-right:1px solid #ccc;
+  border-left:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding-top: 30px;
+  font-size: 16px;
 }
 
 /* remove border radius for the tab */
 
 #exTab1 .nav-pills > li > a {
-  border-radius: 0;
 }
+
 
 /* change border radius for the tab , apply corners on top*/
 

@@ -150,8 +150,14 @@ function about_url(){
 function error_page(){
     return site_url();
 }
+function course_url(){
+    return APP_URL.'khoa-hoc.html';
+}
 function browse_url($id,$name){
-    return APP_URL.'c/'.$id.'/'.url_title($name);
+    return APP_URL.'kh/'.$id.'/'.url_title($name);
+}
+function collaborate_url(){
+    return APP_URL.'hop-tac.html';
 }
 
 function contact_url(){

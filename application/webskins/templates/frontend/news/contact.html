@@ -11,17 +11,23 @@
 			<div class="col-md-6">
 				<div class="contact-form">
 					<h4>Gửi yêu cầu học thử</h4>
-					<form>
+					<form id="form-request">
+						<span class="name-err" style="color: red;"></span>
 						<input class="input" type="text" name="name" placeholder="Họ tên">
+						<span class="email-err" style="color: red;"></span>
 						<input class="input" type="email" name="email" placeholder="Email">
+						<span class="phone-err" style="color: red;"></span>
 						<input class="input" type="text" name="phone" placeholder="Số điện thoại">
+						<span class="birthday-err" style="color: red;"></span>
 						<input class="input" type="text" name="birthday" placeholder="Ngày sinh">
+						<span class="work-err" style="color: red;"></span>
 						<input class="input" type="text" name="work" placeholder="Trường học / Công ty">
-						<select class="input form-control">
-							<option>Chọn khoá học</option>
+						<select class="input form-control input-select" name="course">
+							<option value="">Chọn khoá học</option>
 						</select>
-						<textarea class="input" name="message" placeholder="Nhập nội dung"></textarea>
-						<button class="main-button icon-button pull-right">Gửi</button>
+						<textarea class="input" name="content" placeholder="Nhập nội dung"></textarea>
+						<span class="notice" style="color: #00b240;"></span>
+						<button class="main-button icon-button pull-right" id="send" type="button">Gửi</button>
 					</form>
 				</div>
 			</div>
@@ -51,4 +57,4 @@
 
 </div>
 <!-- /Contact -->
-<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>

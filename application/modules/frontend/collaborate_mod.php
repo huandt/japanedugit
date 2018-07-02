@@ -1,5 +1,5 @@
 <?php
-class contact_mod extends Module{
+class collaborate_mod extends Module{
     function __construct(){
         $this->load->library('Image');
     }
@@ -7,21 +7,20 @@ class contact_mod extends Module{
         $js = array(
             'header' => array(
             ),
-            'footer' => array(
-                'frontend/google-map.js',
-                'frontend/contact.js',
+            'footer' => array(               
             )   
         );        
                 
         return array('js'=>$js,'css'=>$css);
     }
-    function draw(){
+    function draw($param){
         $this->load->skins('frontend');
         $assign = array(
-            //'list'  => $arr_product
+            'local'  => $param['local'],
+            'skin_front' => SKIN_FRONTEND
         );
         $this->smarty->assign($assign);
-        return $this->smarty->display_module('news/contact.html');
+        return $this->smarty->display_module('news/collaborate.html');
     }
 }
 ?>

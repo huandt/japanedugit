@@ -1,0 +1,90 @@
+<style>
+    .nav-pills > li.active > a, .nav-pills > li.active > a:focus {
+        color: #FFF;
+        background-color: #00b240;
+    }
+
+        .nav-pills > li.active > a:hover {
+            background-color: #00b240;
+            color:#FFF;
+        }
+</style>
+<div id="courses" class="section">
+
+			<!-- container -->
+			<div class="container">
+
+				<!-- row -->
+				<div class="row">
+					<div class="section-header text-center">
+						<h2>{{$info[0].title}}</h2>
+					</div>
+				</div>
+				<!-- /row -->
+
+				<!-- courses -->
+				<div id="courses-wrapper">
+
+					<!-- row -->
+					<div class="row">
+						{foreach from=$posts key=k item=value}
+						<!-- single course -->
+						<div class="col-md-2 col-sm-6 col-xs-6">
+							<div class="course-dt {if $k == 0}active-one{/if}">
+								<a href="javascript:;" class="course-img show-detail" rel="{{$value.id}}">
+									<img class="img-circle" src="{$storeData}/course/{$value.img}" alt="">
+									<i class="course-link-icon">{{$value.course_name}}</i>
+								</a>
+								<a class="course-title">{{$value.course_name}}</a>
+							</div>
+						</div>
+						<!-- /single course -->
+						{/foreach}
+					</div>
+					<!-- /row -->
+
+				</div>
+				<!-- /courses -->
+			</div>
+			<!-- container -->
+
+		</div>
+
+
+<div id="courses" class="section" style="margin-top:-110px;">
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div id="exTab1" class="container">	
+<ul  class="nav nav-pills red">
+			<li class="active">
+        <a  href="#1a" data-toggle="tab">MỤC TIÊU</a>
+			</li>
+			<li><a href="#2a" data-toggle="tab">GIÁO TRÌNH</a>
+			</li>
+			<li><a href="#3a" data-toggle="tab">THỜI LƯỢNG HỌC</a>
+			</li>
+  		<li><a href="#4a" data-toggle="tab">PHƯƠNG PHÁP GIẢNG DẠY</a>
+			</li>
+		</ul>
+
+			<div class="tab-content clearfix">
+			  <div class="tab-pane active" id="1a">
+          		<span id="tab1">{{$postSelected[0]}}</span>
+				</div>
+				<div class="tab-pane" id="2a">
+          <span id="tab2">{{$postSelected[1]}}</span>
+				</div>
+        <div class="tab-pane" id="3a">
+          <span id="tab3">{{$postSelected[2]}}</span>
+				</div>
+          <div class="tab-pane" id="4a">
+          <span id="tab4">{{$postSelected[3]}}</span>
+				</div>
+			</div>
+  </div>
+
+
+				</div>
+			</div>
+		</div>

@@ -266,35 +266,16 @@ class course extends CDT_Controller{
             }
         }        
     }
-    function get_car_cal(){
-        $time_start = $this->input->get('time_start');
-        $time_end   = $this->input->get('time_end');
-        $car_id     = $this->input->get('car_id');
-        $day        = date('Y-m-d',strtotime(str_replace('/','-',$this->input->get('day'))));
+    function detail(){
+        $id     = $this->input->get('id');
         $this->load->model('gk_model');     
-        $time_map   = $this->gk_model->select(FE_TIME_MAP,'value,time_code,time_code_show',array('value >'=>$time_start,'value <'=>$time_end));
-        if(!empty($time_map)){
-            $str_time_map   = '';
-            $new_time_map   = array();
-            $data_update    = array();
-            foreach($time_map as $item){
-                $str_time_map .= $item['time_code'].'+';
-                $data_update[$item['time_code']]    = 1;
-                $new_time_map[$item['value']] = $item['time_code_show'];
-            }
-            $str_time_map = rtrim($str_time_map,'+');            
-            $data   = $this->gk_model->select_one(FE_CAR_STATUS,'('.$str_time_map.') as num',array('SCH_DATE'=>$day,'car_id'=>$car_id));
-                      
-            if(!empty($data)){
-                if((int)$data['num'] >= 1){
-                    echo json_encode(array('code'=>0,'msg'=>'Xe '.$car_id. ' đã bận từ '.$new_time_map[$time_start].' đến '.$new_time_map[$time_end]));
-                }else{                    
-                    echo json_encode(array('code'=>1,'msg'=>'Hiện tại xe rảnh trong thời gian bạn chọn'));
-                }
-            }else{
-                echo json_encode(array('code'=>0,'msg'=>'Không có lịch trong ngày: '.$this->input->get('day')));
-            }
-        }        
+        $info   = $this->gk_model->select_one(FE_COURSE_DTL, '*', array('id' => (int)$id));
+        if(!empty($info)){
+            $content = explode('$$$',$info['content']);
+            echo json_encode(array('code'=>1,'tab1' => $content[0],'tab2' => $content[1],'tab3' => $content[2],'tab4' => $content[3]));return;
+        }else{
+            echo json_encode(array('code'=>0,'msg' => 'Not data'));return;
+        }
     }
     function get_district(){
         $this->load->cache(array("adapter"=>"file","cache_path"=>CACHE_PATH.'location'.DS));

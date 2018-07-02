@@ -19,4 +19,5 @@ define('FE_DISTRICT', 'sc_district');
 define('FE_TEACHER', 'sttb_teacher_info');
 define('FE_COURSE','tbl_course_list');
 define('FE_COURSE_DTL','tbl_course_dtl');
+define('FE_REQUEST','tbl_request_user');
 ?>

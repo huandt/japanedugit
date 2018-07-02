@@ -44,11 +44,12 @@ $route['admin/([a-zA-Z0-9-_/]+)'] = "backend/$1";
 $route['admin'] = "backend/home/index";
 $route['tin-tuc/([a-zA-Z0-9/]+)/([a-zA-Z0-9-]+).html']  = 'detail_new/index/$1/$2';
 $route['(gioi-thieu).html']    = 'about/index';
-$route['(lien-he).html']   = 'about/contact/index';
+$route['(lien-he).html']   = 'about/contact';
 $route['tin-tuc']   = 'news/index';
-$route['khoa-hoc']   = 'browse/index';
-$route['kh/([a-zA-Z0-9/]+)/([a-zA-Z0-9-]+)']  = 'browse/cate_pro/$1/$2';
+$route['(khoa-hoc).html']   = 'browse/index';
+$route['kh/([a-zA-Z0-9/]+)/([a-zA-Z0-9-]+)']  = 'browse/course_detail/$1/$2';
 $route['hinh-anh-hoat-dong']   = 'gallery/index';
 $route['tai-lieu']   = 'ebook/index';
+$route['(hop-tac).html']   = 'about/collaborate';
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
